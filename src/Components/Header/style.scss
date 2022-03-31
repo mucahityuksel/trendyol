@@ -1,0 +1,206 @@
+@import "../../assets/veriables.scss";
+
+.header {
+    width: 100%;
+    position: fixed;
+    background-color: $white;
+    height: 86px;
+    display: flex;
+    flex-direction: column;
+
+    .wrapper {
+        max-width: 1200px;
+        width: 100%;
+        margin: 0px auto;
+
+        .first-header {
+            margin-top: -12px;
+            .header-top-list {
+                display: flex;
+                white-space: nowrap;
+                list-style: none;
+                align-items: center;
+                justify-content: end;
+                float: right;
+                text-align: end;
+                li {
+                    padding: 0px 9px;
+                    font-size: 12px;
+                    a {
+                        padding-left: 12px;
+                        text-decoration: none;
+                        color: $list-text-color;
+                        line-height: 15px;
+                        font-family: "Source Sans Pro", sans-serif;
+                        &:hover {
+                            color: $link-hover-color;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .header-nav {
+        max-width: 1200px;
+        width: 100%;
+        margin: 0px auto;
+        display: flex;
+        margin-top: -10px;
+        justify-content: space-between;
+        align-items: center;
+        .header-logo {
+            width: 146px;
+            img {
+                object-fit: contain;
+                margin-bottom: -3px;
+            }
+        }
+        .search-comp {
+            max-width: 598px;
+            width: 100%;
+            .header-search-bar {
+                max-width: 598px;
+                width: 100%;
+                position: relative;
+                .header-search {
+                    position: relative;
+                    z-index: 1;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    background-color: #f3f3f3;
+                    border: 2px solid white;
+                    border-radius: 5px;
+                    transition: all ease 0.5s;
+                    .search-input {
+                        width: 100%;
+                        font-size: 14px;
+                        color: #333;
+                        background-color: #f3f3f3;
+                        border: 2px solid transparent;
+                        border-radius: 6px;
+                        padding: 10px 40px 10px 15px;
+                        box-sizing: border-box;
+                        outline: none;
+                        transition: all ease 0.3s;
+                    }
+                    .search-icon {
+                        color: $main-color;
+                        padding: 0px 10px;
+                        font-size: 20px;
+                    }
+                    &:focus-within {
+                        border: 2px solid $main-color;
+                    }
+                }
+            }
+        }
+
+        .header-account {
+            .header-account-links {
+                display: flex;
+                justify-content: end;
+                align-items: center;
+                .header-link-items {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    cursor: pointer;
+                    padding: 0px 7px;
+                    position: relative;
+                    color: #333;
+                    font-family: "Source Sans Pro", sans-serif;
+                    .user-notloggedin-container {
+                        display: none;
+                    }
+
+                    .header-link-item {
+                        display: flex;
+                        align-items: center;
+                        p {
+                            font-size: 13px;
+                        }
+                        &:hover {
+                            color: $main-color;
+                            transition: all ease 0.3s;
+                            .user-notloggedin-container {
+                                display: flex;
+                                flex-direction: column;
+                                padding: 10px;
+                            }
+                        }
+                        .header-list-icon {
+                            padding: 0px 10px;
+                        }
+                    }
+                    &:hover {
+                        color: $main-color;
+                        transition: all ease 0.5s;
+                        .user-notloggedin-container {
+                            position: absolute;
+                            display: flex;
+                            flex-direction: column;
+                            padding: 10px;
+                            background-color: $white;
+                            top: 35px;
+                            border: $border;
+                            color: #333;
+                            width: 150px;
+                            height: 75px;
+                            transition: all ease 3s;
+                            .login-button {
+                                padding: 5px 0px;
+                                background-color: $main-color;
+                                color: $white;
+                                border-radius: 6px;
+                                font-size: 13px;
+                                font-weight: 700;
+                            }
+                            .signup-button {
+                                padding: 5px 0px;
+                                border: $border;
+                                border-radius: 6px;
+                                font-size: 13px;
+                                font-weight: 700;
+                                margin-top: 15px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .header-categories-bar {
+        width: 100%;
+        border-bottom: $border;
+        .header-categories {
+            max-width: 1200px;
+            width: 100%;
+            margin: 0px auto;
+            display: block;
+            .header-category-list {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+                display: flex;
+                width: 100%;    
+                .category-item {
+                    color: #333;
+                    font-family: "Source Sans Pro", sans-serif;
+                    line-height: 34px;
+                    font-size: 14px;
+                    letter-spacing: 0.18px;
+                    font-weight: 700;
+                    cursor: pointer;
+                    white-space: nowrap;
+                    padding: 0px 21px;
+                    &:hover {
+                        transition: all ease 0.3s;
+                        color: $main-color;
+                        box-shadow: inset 0 -2px 0 0 #f27a1a;
+                    }
+                }
+            }
+        }
+    }
+}
