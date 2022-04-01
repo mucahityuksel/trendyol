@@ -1,0 +1,46 @@
+@import "../../assets/veriables.scss";
+
+.slider {
+    height: 140px;
+    display: flex;
+    align-items: center;
+    max-width: 1200px;
+    width: 100%;
+    margin: 0px auto;
+    margin-top: 120px;
+    display: "flex",
+}
+
+.brand {
+    display: flex;
+    flex-direction: column;
+    padding: 15px 0px;
+ 
+    cursor: pointer;
+    img {
+        width: 68px;
+        object-fit: contain;
+        border-radius: 50px;
+        border: 1px solid $white;
+        margin: 0px auto;
+    }
+    .brand-name {
+        color: #333;
+        font-size: 14px;
+        line-height: 14px;
+        padding: 0px 5px;
+        font-family: "Source Sans Pro", sans-serif;
+        margin-top: 10px;
+        font-weight: 700;
+    }
+    &:hover {
+        img {
+            border: 1px solid $main-color;
+            transition: all ease 0.3s;
+        }
+        .brand-name {
+            transition: all ease 0.3s;
+            color: $main-color;
+        }
+    }
+}

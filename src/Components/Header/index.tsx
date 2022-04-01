@@ -1,11 +1,20 @@
 
 import "./style.scss"
 import { FiSearch } from "react-icons/fi"
-import {  MdOutlineFavorite } from "react-icons/md"
+import { MdOutlineFavorite } from "react-icons/md"
 import { FaShoppingCart } from "react-icons/fa"
-import {  RiUser3Fill } from "react-icons/ri"
+import { RiUser3Fill } from "react-icons/ri"
+import { useEffect, useState } from "react"
+import categories from "../../kadinCategory.json"
+import menCategories from "../../erkekCategory.json"
+import axios from "axios"
 
 function Header() {
+
+    const [active, setActive] = useState<boolean>(false)
+    const [active1, setActive1] = useState<boolean>(false)
+
+
     return (
         <div className='header'>
             <div className='wrapper'>
@@ -60,10 +69,48 @@ function Header() {
                 </div>
             </div>
             <div className='header-categories-bar'>
-                <div className='header-categories'>
+                <nav className='header-categories'>
                     <ul className='header-category-list'>
-                        <li className='category-item'>KADIN</li>
-                        <li className='category-item'>ERKEK</li>
+                        <li className='category-item' onMouseOver={() => { setActive(true) }} onMouseOut={() => setActive(false)} >KADIN
+                            <div className={active === true ? "subnav-active" : "subnav"}>
+                                <div className="subnav-center">
+                                    {
+                                        categories.categories.map((data: any) => {
+                                            return <div className="subnav-column">
+                                                {
+                                                    <div>
+                                                        <div className="category-name">{data.name}</div>
+                                                        {data.subCategories !== [] ? data.subCategories.map((item: any) => {
+                                                            return <div className="sub-categories">{item.name} </div>
+                                                        }) : <div></div>}
+                                                    </div>
+                                                }
+                                            </div>
+                                        })
+                                    }
+                                </div>
+                            </div>
+                        </li>
+                        <li className='category-item' onMouseOver={() => { setActive1(true) }} onMouseOut={() => setActive1(false)} >ERKEK
+                            <div className={active1 === true ? "subnav-active" : "subnav"}>
+                                <div className="subnav-center">
+                                    {
+                                        menCategories.categories.map((data: any) => {
+                                            return <div className="subnav-column">
+                                                {
+                                                    <div>
+                                                        <div className="category-name">{data.name}</div>
+                                                        {data.subCategories !== [] ? data.subCategories.map((item: any) => {
+                                                            return <div className="sub-categories">{item.name} </div>
+                                                        }) : <div></div>}
+                                                    </div>
+                                                }
+                                            </div>
+                                        })
+                                    }
+                                </div>
+                            </div>
+                        </li>
                         <li className='category-item'>ÇOCUK</li>
                         <li className='category-item'>EV & MOBİLYA</li>
                         <li className='category-item'>SÜPERMARKET</li>
@@ -72,9 +119,9 @@ function Header() {
                         <li className='category-item'>SAAT & AKSESUAR</li>
                         <li className='category-item'>ELEKTRONİK</li>
                         <li className='category-item'>SPOR & OUTDOOR</li>
-                        
+
                     </ul>
-                </div>
+                </nav>
             </div>
         </div>
     )

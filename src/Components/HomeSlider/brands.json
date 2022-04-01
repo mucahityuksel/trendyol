@@ -1,0 +1,59 @@
+{
+    "brands": [
+        {
+            "id": 1,
+            "name": "Sana Özel",
+            "image": "https://cdn.dsmcdn.com/mnresize/200/200/marketing/datascience/automation/2022/3/9/Top_Widget_202203091801.png"
+        },
+        {
+            "id": 2,
+            "name": "Sen De Al!",
+            "image": "https://cdn.dsmcdn.com/mnresize/200/200/marketing/datascience/automation/2022/3/7/Coksatanlar1_202203072239.png"
+        },
+        {
+            "id": 3,
+            "name": "Sen De Al!",
+            "image": "https://cdn.dsmcdn.com/mnresize/200/200/marketing/datascience/automation/2020/12/30/EglenceWeb_202012301831.png"
+        },
+        {
+            "id": 4,
+            "name": "Adidas",
+            "image": "https://cdn.dsmcdn.com/mnresize/200/200/marketing/datascience/Automation/BrandBoutique/2021/4/25/20210425_15461619354815_Adidas.png"
+        },
+        {
+            "id": 5,
+            "name": "Sana Özel",
+            "image": "https://cdn.dsmcdn.com/mnresize/200/200/marketing/datascience/automation/2022/3/9/Top_Widget_202203091801.png"
+        },
+        {
+            "id": 6,
+            "name": "Sen De Al!",
+            "image": "https://cdn.dsmcdn.com/mnresize/200/200/marketing/datascience/automation/2022/3/7/Coksatanlar1_202203072239.png"
+        },
+        {
+            "id": 7,
+            "name": "Sen De Al!",
+            "image": "https://cdn.dsmcdn.com/mnresize/200/200/marketing/datascience/automation/2020/12/30/EglenceWeb_202012301831.png"
+        },
+        {
+            "id": 8,
+            "name": "Adidas",
+            "image": "https://cdn.dsmcdn.com/mnresize/200/200/marketing/datascience/Automation/BrandBoutique/2021/4/25/20210425_15461619354815_Adidas.png"
+        },
+        {
+            "id": 9,
+            "name": "Adidas",
+            "image": "https://cdn.dsmcdn.com/mnresize/200/200/marketing/datascience/Automation/BrandBoutique/2021/4/25/20210425_15461619354815_Adidas.png"
+        },
+        {
+            "id": 10,
+            "name": "Adidas",
+            "image": "https://cdn.dsmcdn.com/mnresize/200/200/marketing/datascience/Automation/BrandBoutique/2021/4/25/20210425_15461619354815_Adidas.png"
+        },
+        {
+            "id": 11,
+            "name": "Adidas",
+            "image": "https://cdn.dsmcdn.com/mnresize/200/200/marketing/datascience/Automation/BrandBoutique/2021/4/25/20210425_15461619354815_Adidas.png"
+        }
+    ]
+}

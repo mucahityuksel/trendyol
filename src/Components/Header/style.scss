@@ -173,17 +173,21 @@
     .header-categories-bar {
         width: 100%;
         border-bottom: $border;
+
         .header-categories {
             max-width: 1200px;
             width: 100%;
             margin: 0px auto;
             display: block;
+            position: relative;
+
             .header-category-list {
                 list-style: none;
                 padding: 0;
                 margin: 0;
                 display: flex;
-                width: 100%;    
+
+                width: 100%;
                 .category-item {
                     color: #333;
                     font-family: "Source Sans Pro", sans-serif;
@@ -198,6 +202,57 @@
                         transition: all ease 0.3s;
                         color: $main-color;
                         box-shadow: inset 0 -2px 0 0 #f27a1a;
+                    }
+                    .subnav {
+                        display: none;
+                    }
+                    .subnav-active {
+                        display: block;
+                        background-color: $white;
+                        transition: all ease 0.3s;
+                        position: absolute;
+                        margin-top: 1px;
+                        width: 90%;
+                        background: white;
+                        left: 0;
+                        margin-left: 55px;
+                        box-sizing: border-box;
+                        box-shadow: inset 0 0 1px 1px #ebebeb;
+                        .subnav-center {
+                            overflow: hidden;
+                            padding: 25px;
+                            display: flex;
+                            justify-content: space-between;
+                            color: #333;
+                            font-size: 15px;
+
+                            .subnav-column {
+                                transition: all ease 0.3s;
+                                text-align: start;
+                                padding: 10px;
+
+                                div {
+                                    .category-name {
+                                        &:hover {
+                                            text-decoration: underline;
+                                            color: $main-color;
+                                            transition: all ease 0.3s;
+                                        }
+                                    }
+                                    .sub-categories {
+                                        color: $link-hover-color;
+                                        text-decoration: none;
+                                        line-height: 20px;
+                                        font-size: 13px;
+                                        &:hover {
+                                            text-decoration: underline;
+                                            color: $main-color;
+                                            transition: all ease 0.3s;
+                                        }
+                                    }
+                                }
+                            }
+                        }
                     }
                 }
             }
