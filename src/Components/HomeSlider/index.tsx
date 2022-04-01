@@ -50,25 +50,21 @@ function HomeSlider() {
         prevArrow: <SamplePrevArrow />
     };
     return (
+        <Slider
+            {...settings}
+        >
+            {
+                data.brands.map((item: any) => {
+                    return <div className="brand">
+                        <img src={item.image} ></img>
+                        <div className="brand-name">{item.name} </div>
+
+                    </div>
+                })
+            }
 
 
-        
-
-            <Slider
-                {...settings}
-            >
-                {
-                    data.brands.map((item: any) => {
-                        return <div className="brand">
-                            <img src={item.image} ></img>
-                            <div className="brand-name">{item.name} </div>
-
-                        </div>
-                    })
-                }
-
-
-            </Slider>
+        </Slider>
 
 
 
