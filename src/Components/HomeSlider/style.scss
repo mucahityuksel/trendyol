@@ -7,8 +7,14 @@
     max-width: 1200px;
     width: 100%;
     margin: 0px auto;
-    margin-top: 120px;
-    display: "flex",
+    margin-top: 130px;
+    display: "flex";
+    .slick-arrow{
+     
+        
+    }
+    
+    
 }
 
 .brand {
@@ -21,7 +27,7 @@
         width: 68px;
         object-fit: contain;
         border-radius: 50px;
-        border: 1px solid $white;
+        border: 1px solid #d3d3d3;
         margin: 0px auto;
     }
     .brand-name {

@@ -1,0 +1,81 @@
+@import "../../assets//veriables.scss";
+
+.advertise-container {
+    width: 100%;
+    margin-top: 20px;
+    .advertise {
+        max-width: 1200px;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        margin: 0px auto;
+        .advertise-card {
+            width: 30.33%;
+            display: flex;
+            flex-direction: column;
+            border: 1px solid #d3d3d3;
+            border-radius: $space-small;
+            transition : transform 1s ease;
+            box-shadow: 0 0 7px #d3d3d3;
+            cursor: pointer;
+            &:hover{
+                border : 1px solid $main-color;
+                transform: scale(1.01);
+                .advertise-title{
+                    background-color: $main-color;
+                }
+            }
+            .advertise-img {
+                transition : transform 1s ease;
+                
+                height: 187px;
+                img {
+                    object-fit: contain;
+                    border-start-end-radius: 5px;
+                    width: 100%;
+                    position: relative;
+                    transition : transform 1s ease;
+                   
+                }
+            }
+            .advertise-title {
+                display: flex;
+                justify-content: space-between;
+                padding: 0px 17px;
+                background-color: black;
+                line-height: 38px;
+                height: 39px;
+                margin-top: -12px;
+                transition: background 300ms ease;
+                font-family: $font;
+                overflow: hidden;
+                cursor: pointer;
+                &:hover{
+                    background-color: $main-color;
+                    color: $white;
+                    .advertise-footer{
+                        color: white;
+                    }
+                }
+                .advertise-header {
+                    text-overflow: ellipsis;
+                    width: 50%;
+                    white-space: nowrap;
+                    color: white;
+                    font-size: 14px;
+                    font-weight: $bold;
+                    overflow: hidden;
+                }
+                .advertise-footer{
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    color: black;
+                    font-size: 14px;
+                    font-weight: $bold;
+                }
+            }
+        }
+    }
+}

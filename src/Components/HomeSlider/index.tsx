@@ -11,13 +11,12 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 function HomeSlider() {
 
-    const [brand, setBrand] = useState<any[]>([])
     function SampleNextArrow(props: any) {
         const { className, style, onClick } = props;
         return (
             <div
                 className={className}
-                style={{ ...style, display: "block", background: "#333" }}
+                style={{ ...style, display: "block", background: "gray" }}
                 onClick={onClick}
             />
         );
@@ -28,7 +27,7 @@ function HomeSlider() {
         return (
             <div
                 className={className}
-                style={{ ...style, display: "block", background: "#333" }}
+                style={{ ...style, display: "block", background: "gray" }}
                 onClick={onClick}
             />
         );
@@ -44,7 +43,7 @@ function HomeSlider() {
         infinite: true,
         speed: 500,
         className: "slider",
-        slidesToShow: 10,
+        slidesToShow: 11,
         slidesToScroll: 1,
         nextArrow: <SampleNextArrow />,
         prevArrow: <SamplePrevArrow />

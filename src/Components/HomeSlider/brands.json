@@ -12,7 +12,7 @@
         },
         {
             "id": 3,
-            "name": "Sen De Al!",
+            "name": "Kodlar & Hizmetler",
             "image": "https://cdn.dsmcdn.com/mnresize/200/200/marketing/datascience/automation/2020/12/30/EglenceWeb_202012301831.png"
         },
         {
@@ -22,38 +22,63 @@
         },
         {
             "id": 5,
-            "name": "Sana Özel",
-            "image": "https://cdn.dsmcdn.com/mnresize/200/200/marketing/datascience/automation/2022/3/9/Top_Widget_202203091801.png"
+            "name": "Nike",
+            "image": "https://cdn.dsmcdn.com/mnresize/200/200/marketing/datascience/Automation/BrandBoutique/2021/4/25/20210425_15531619355211_Nike.png"
         },
         {
             "id": 6,
-            "name": "Sen De Al!",
-            "image": "https://cdn.dsmcdn.com/mnresize/200/200/marketing/datascience/automation/2022/3/7/Coksatanlar1_202203072239.png"
+            "name": "Lacoste",
+            "image": "https://cdn.dsmcdn.com/mnresize/200/200/marketing/datascience/Automation/BrandBoutique/2021/4/25/20210425_15521619355121_Lacoste.png"
         },
         {
             "id": 7,
-            "name": "Sen De Al!",
-            "image": "https://cdn.dsmcdn.com/mnresize/200/200/marketing/datascience/automation/2020/12/30/EglenceWeb_202012301831.png"
+            "name": "Trendyol Milla",
+            "image": "https://cdn.dsmcdn.com/mnresize/200/200/marketing/datascience/Automation/BrandBoutique/2021/4/25/20210425_15561619355388_Trendyolmilla.png"
         },
         {
             "id": 8,
-            "name": "Adidas",
-            "image": "https://cdn.dsmcdn.com/mnresize/200/200/marketing/datascience/Automation/BrandBoutique/2021/4/25/20210425_15461619354815_Adidas.png"
+            "name": "Puma",
+            "image": "https://cdn.dsmcdn.com/mnresize/200/200/marketing/datascience/Automation/BrandBoutique/2021/4/25/20210425_15541619355266_Puma.png"
         },
         {
             "id": 9,
-            "name": "Adidas",
-            "image": "https://cdn.dsmcdn.com/mnresize/200/200/marketing/datascience/Automation/BrandBoutique/2021/4/25/20210425_15461619354815_Adidas.png"
+            "name": "Hummel",
+            "image": "https://cdn.dsmcdn.com/mnresize/200/200/marketing/datascience/Automation/BrandBoutique/2021/4/25/20210425_15511619355075_Hummel.png"
         },
         {
             "id": 10,
-            "name": "Adidas",
-            "image": "https://cdn.dsmcdn.com/mnresize/200/200/marketing/datascience/Automation/BrandBoutique/2021/4/25/20210425_15461619354815_Adidas.png"
+            "name": "Mavi",
+            "image": "https://cdn.dsmcdn.com/mnresize/200/200/marketing/datascience/Automation/BrandBoutique/2021/12/3/maviii.png"
         },
         {
             "id": 11,
-            "name": "Adidas",
-            "image": "https://cdn.dsmcdn.com/mnresize/200/200/marketing/datascience/Automation/BrandBoutique/2021/4/25/20210425_15461619354815_Adidas.png"
+            "name": "İpekyol",
+            "image": "https://cdn.dsmcdn.com/mnresize/200/200/marketing/datascience/Automation/BrandBoutique/2021/4/25/20210425_15511619355083_Ipekyol.png"
+        },
+        {
+            "id": 12,
+            "name": "U.S Polo Assn.",
+            "image": "https://cdn.dsmcdn.com/mnresize/200/200/marketing/datascience/Automation/BrandBoutique/2021/4/25/20210425_15561619355397_USPoloAssn.png"
+        },
+        {
+            "id": 13,
+            "name": "Tommy Hilfiger",
+            "image": "https://cdn.dsmcdn.com/mnresize/200/200/marketing/datascience/Automation/BrandBoutique/2021/4/25/20210425_15561619355379_TommyHilfiger.png"
+        },
+        {
+            "id": 14,
+            "name": "Guess",
+            "image": "https://cdn.dsmcdn.com/mnresize/200/200/marketing/datascience/Automation/BrandBoutique/2021/4/25/20210425_15501619355054_Guess.png"
+        },
+        {
+            "id": 15,
+            "name": "New Balance",
+            "image": "https://cdn.dsmcdn.com/mnresize/200/200/marketing/datascience/Automation/BrandBoutique/2021/4/25/20210425_15531619355204_NewBalance.png"
+        },
+        {
+            "id": 16,
+            "name": "Koton",
+            "image": "https://cdn.dsmcdn.com/mnresize/200/200/marketing/datascience/Automation/BrandBoutique/2021/4/25/20210425_15511619355115_Koton.png"
         }
     ]
 }
