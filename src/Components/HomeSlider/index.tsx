@@ -9,6 +9,9 @@ import '@brainhubeu/react-carousel/lib/style.css';
 import "./style.scss"
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+
+import data1 from "../FeaturedProduct/products.json"
+
 function HomeSlider() {
 
     function SampleNextArrow(props: any) {
@@ -21,6 +24,10 @@ function HomeSlider() {
             />
         );
     }
+
+    useEffect(()=> {
+        axios.get("http://localhost:3001/products").then((res) => console.log(res))
+    },[])
 
     function SamplePrevArrow(props: any) {
         const { className, style, onClick } = props;
