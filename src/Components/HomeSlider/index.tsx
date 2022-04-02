@@ -25,9 +25,6 @@ function HomeSlider() {
         );
     }
 
-    useEffect(()=> {
-        axios.get("http://localhost:3001/products").then((res) => console.log(res))
-    },[])
 
     function SamplePrevArrow(props: any) {
         const { className, style, onClick } = props;
@@ -39,11 +36,7 @@ function HomeSlider() {
             />
         );
     }
-    useEffect(() => {
-        axios.get("https://api.trendyol.com/sapigw/brands")
-            .then((res) => console.log(res))
-            .catch((e) => console.log(e))
-    }, [])
+
 
     const settings = {
         dots: false,

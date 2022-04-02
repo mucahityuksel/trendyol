@@ -1,0 +1,121 @@
+@import "../../assets/veriables.scss";
+
+.featured-container {
+    width: 100%;
+    .featured-bar {
+        max-width: 1200px;
+        width: 100%;
+        border: 1px solid #f2e5da;
+        background-color: #fffaf6;
+        border-radius: 6px;
+        margin: 0px auto;
+        margin-top: 30px;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        p {
+            text-align: start;
+            padding: 0px 15px;
+            font-size: 22px;
+            font-weight: 700;
+            color: #333;
+            font-family: $font;
+        }
+        .slider-bar {
+            height: 396px;
+            .slider1 {
+                height: 296px;
+                display: flex;
+                justify-content: space-between;
+            }
+        }
+    }
+}
+
+.product-card {
+    width: 198px;
+
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #f2e5da;
+    padding: 0px 20px;
+
+    background-color: white;
+
+    .product-image {
+        display: flex;
+        position: relative;
+
+        img {
+            width: 120px;
+            margin: 0px auto;
+            object-fit: contain;
+        }
+    }
+    .product-name1 {
+        text-align: start;
+        font-size: 14px;
+        font-family: $font;
+        text-overflow: ellipsis;
+    }
+    .product-name {
+        text-align: start;
+        font-size: 14px;
+        font-weight: 800;
+        font-family: $font;
+    }
+    .product-details {
+        display: flex;
+        flex-direction: column;
+        left: 0;
+        top: 0;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        .product-cargo {
+            height: auto;
+            .cargo {
+                display: flex;
+                align-items: center;
+                padding: 0 !important;
+                margin-left: 5px;
+                margin-top: 5px !important;
+                border-radius: 3px;
+                font-size: 10px !important;
+                width: 56px !important;
+                height: 28px !important;
+                box-sizing: border-box;
+                background-color: #535353;
+
+                .cargo-text {
+                    padding: 5px 5px;
+                    color: white;
+                    font-weight: 700;
+                }
+            }
+        }
+    }
+
+    .product-sale {
+        display: flex;
+        flex-direction: column;
+        left: 0;
+        top: 45px;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        .product-sale-icon {
+            height: auto;
+            .sale {
+                display: flex;
+                padding-left: 10px;
+                font-size: 10px !important;
+                box-sizing: border-box;
+                img {
+                    width: 35px !important;
+                    object-fit: contain;
+                }
+            }
+        }
+    }
+}
