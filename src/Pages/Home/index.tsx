@@ -14,7 +14,13 @@ function Home() {
             <Header />
             <HomeSlider />
             <Advirtise />
-            <FeaturedProduct />
+            <FeaturedProduct title={"Öne Çıkanlar"} />
+            <Advirtise />
+            <Advirtise />
+            <FeaturedProduct title={"Çok Satan Ürünler"} />
+            <FeaturedProduct title={"Fırsat Ürünleri"} />
+            <Advirtise />
+            <Advirtise />
             <Advirtise />
             <Advirtise />
         </div>

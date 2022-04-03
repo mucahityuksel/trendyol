@@ -1,0 +1,226 @@
+@import "../../assets/veriables.scss";
+
+.login-form-component {
+    margin: 0px auto;
+    margin-top: 150px;
+    display: flex;
+    flex-direction: column;
+    white-space: nowrap;
+    font-family: $font;
+    .login-title {
+        font-size: 34px;
+        color: rgb(51, 51, 51);
+    }
+    .login-subtitle {
+        font-size: 16px;
+        margin-bottom: 15px;
+        color: rgb(51, 51, 51);
+    }
+    .login-tabs {
+        .home {
+            color: rgb(51, 51, 51);
+            font-size: 16px;
+            background-color: rgb(236, 235, 235) !important;
+            border-top-left-radius: 6px !important;
+            border-top-right-radius: 6px !important;
+            margin-right: 5px;
+            height: 48px;
+        }
+        .home-active {
+            font-size: 16px;
+            color: $main-color;
+
+            margin-right: 5px;
+            height: 48px;
+            border-top-left-radius: 6px !important;
+            border-top-right-radius: 6px !important;
+        }
+        .news {
+            font-size: 16px;
+            color: rgb(51, 51, 51);
+            background-color: rgb(236, 235, 235) !important;
+            border-top-left-radius: 6px !important;
+            border-top-right-radius: 6px !important;
+            margin-left: 5px;
+            height: 48px;
+        }
+        .news-active {
+            font-size: 16px;
+            color: $main-color;
+            border-top-left-radius: 6px !important;
+            border-top-right-radius: 6px !important;
+            margin-left: 5px;
+            height: 48px;
+        }
+    }
+}
+.login-form {
+    display: flex;
+    flex-direction: column;
+    padding: 25px;
+    border-left: 1px solid #e6e6e6;
+    border-bottom: 1px solid #e6e6e6;
+    border-right: 1px solid #e6e6e6;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+    .email-bar {
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+        label {
+            padding: 15px 0px;
+            font-family: $font;
+            font-size: 14px;
+            font-weight: 600;
+        }
+        input {
+            border: 1px solid #e6e6e6;
+            background-color: rgb(250, 250, 250);
+            height: 45px;
+            outline: 1px solid #e6e6e6;
+            border-radius: 6px;
+        }
+    }
+    .password-bar {
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+        label {
+            padding: 15px 0px;
+            font-family: $font;
+            font-size: 14px;
+            font-weight: 600;
+        }
+        input {
+            border: 1px solid #e6e6e6;
+            background-color: rgb(250, 250, 250);
+            height: 45px;
+            outline: 1px solid #e6e6e6;
+            border-radius: 6px;
+        }
+    }
+    .forgot-password {
+        text-align: right;
+        padding: 15px 0px;
+        text-decoration: underline;
+        font-weight: 500;
+        font-family: $font;
+        cursor: pointer;
+        &:hover {
+            color: $main-color;
+        }
+    }
+    .password-info {
+        text-align: left;
+        padding: 5px 0px;
+        font-size: 12px;
+        font-weight: 500;
+        font-family: $font;
+        margin-bottom: 15px;
+    }
+    .gender-label {
+        text-align: left;
+        padding: 5px 0px;
+        font-size: 12px;
+        font-weight: 500;
+        font-family: $font;
+    }
+    .gender-button {
+        width: 100%;
+        display: flex;
+        margin-bottom: 15px;
+        font-family: $font;
+        .women-button {
+            width: 50%;
+            border: 1px solid #d3d3d3;
+            border-radius: 3px;
+            height: 48px;
+        }
+        .women-button-active {
+            width: 50%;
+            border: 1px solid #d3d3d3;
+            border-radius: 3px;
+            height: 48px;
+            border: 1px solid $main-color;
+            color: $main-color;
+        }
+        .men-button {
+            width: 50%;
+            border: 1px solid #d3d3d3;
+            border-radius: 3px;
+            height: 48px;
+        }
+        .men-button-active {
+            width: 50%;
+            border: 1px solid #d3d3d3;
+            border-radius: 3px;
+            height: 48px;
+            border: 1px solid $main-color;
+            color: $main-color;
+        }
+    }
+    .condition {
+        display: flex;
+        text-align: left;
+        padding: 5px 0px;
+        color: #999999;
+        b {
+            text-decoration: underline;
+            padding: 0px 2px;
+            cursor: pointer;
+        }
+    }
+    .data-save {
+        display: flex;
+        text-align: left;
+
+        span {
+            font-size: 12px;
+            color: #666666;
+            padding: 0px 5px;
+        }
+    }
+    .login-button {
+        height: 48px;
+        border-radius: 6px;
+        color: $white;
+        background-color: $main-color;
+        border: none;
+        font-weight: 700;
+        font-size: 16px;
+        font-family: $font;
+    }
+    .social-login {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 15px;
+        font-family: $font;
+        .facebook {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            border: 1px solid #d3d3d3;
+            width: 45%;
+            padding: 8px;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            &:hover {
+                background-color: #f6f6f6;
+            }
+            .login-with {
+                display: flex;
+                flex-direction: column;
+                text-align: left;
+                font-size: 12px;
+                .logo-title {
+                    font-weight: 600;
+                    font-size: 14px;
+                }
+                .logo-subtitle {
+                    color: #999999;
+                }
+            }
+        }
+    }
+}

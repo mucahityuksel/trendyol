@@ -8,12 +8,14 @@ import { useEffect, useState } from "react"
 import categories from "../../kadinCategory.json"
 import menCategories from "../../erkekCategory.json"
 import axios from "axios"
+import { useHistory } from "react-router-dom"
 
 function Header() {
 
     const [active, setActive] = useState<boolean>(false)
     const [active1, setActive1] = useState<boolean>(false)
 
+    const history = useHistory();
 
     return (
         <div className='header'>
@@ -42,7 +44,7 @@ function Header() {
                     <div className='header-account-links'>
                         <div className='header-link-items'>
 
-                            <div className='header-link-item'>
+                            <div className='header-link-item' onClick={()=> history.push("/login")}>
                                 <RiUser3Fill className='header-list-icon'></RiUser3Fill>
                                 <p>Giriş Yap</p>
                             </div>

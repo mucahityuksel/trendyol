@@ -1,5 +1,5 @@
 import axios from 'axios'
-import  { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import "./style.scss"
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -9,7 +9,7 @@ import Carousel, { slidesToShowPlugin } from '@brainhubeu/react-carousel';
 
 
 
-function FeaturedProduct() {
+function FeaturedProduct({ title }: any) {
 
     const [data, setData] = useState([])
 
@@ -25,11 +25,11 @@ function FeaturedProduct() {
     return (
         <div className='featured-container'>
             <div className='featured-bar'>
-                <p>Öne Çıkanlar</p>
+                <p>{title}</p>
 
                 <div className='slider-bar'>
                     <Carousel
-                        className=''
+                        className='carousel'
                         plugins={[
                             'infinite',
                             'arrows',
@@ -51,13 +51,14 @@ function FeaturedProduct() {
                                         <div className="product-name1"><span>{item.name}</span> </div>
 
                                         <div className='product-details'>
-                                            <div className='product-like'>
-                                                <div className='icon-div'><MdOutlineFavoriteBorder className='like-icon'></MdOutlineFavoriteBorder></div>
-                                            </div>
-                                            <div className='product-cargo'>
-
-                                                <div className='cargo'>
-                                                    <div className='cargo-text'> KARGO BEDAVA</div>
+                                            <div>
+                                                <div className='product-like'>
+                                                    <div className='icon-div'><MdOutlineFavoriteBorder className='like-icon'></MdOutlineFavoriteBorder></div>
+                                                </div>
+                                                <div className='product-cargo'>
+                                                    <div className='cargo'>
+                                                        <div className='cargo-text'> KARGO BEDAVA</div>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>

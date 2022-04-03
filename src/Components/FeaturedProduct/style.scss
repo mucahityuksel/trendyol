@@ -34,23 +34,34 @@
 }
 
 .product-card {
-    width: 198px;
+    width: 240px;
 
     display: flex;
     flex-direction: column;
     border: 1px solid #f2e5da;
     padding: 0px 20px;
-
+    cursor: pointer;
     background-color: white;
-
+    
     .product-image {
         display: flex;
-        position: relative;
-
+      
+       
+       
+        transition: transform 1s ease;
+        &:hover {
+            transform: scale(1.01);
+            
+        }
         img {
             width: 120px;
             margin: 0px auto;
             object-fit: contain;
+            transition: transform 1s ease;
+            &:hover {
+                transform: scale(1.01);
+                
+            }
         }
     }
     .product-name1 {
@@ -147,5 +158,12 @@
             font-weight: 700;
             padding: 15px 0px;
         }
+    }
+}
+
+.carousel button {
+    background-color: #d3d3d3 !important;
+    &:hover {
+        background-color: #d3d3d3 !important;
     }
 }
