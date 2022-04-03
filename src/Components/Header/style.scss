@@ -175,13 +175,14 @@
     .header-categories-bar {
         width: 100%;
         border-bottom: $border;
-
+        background: white;
         .header-categories {
             max-width: 1200px;
             width: 100%;
             margin: 0px auto;
             display: block;
             position: relative;
+            
 
             .header-category-list {
                 list-style: none;

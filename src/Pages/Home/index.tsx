@@ -15,6 +15,8 @@ function Home() {
             <HomeSlider />
             <Advirtise />
             <FeaturedProduct />
+            <Advirtise />
+            <Advirtise />
         </div>
     )
 }
