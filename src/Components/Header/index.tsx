@@ -30,7 +30,7 @@ function Header() {
             </div>
             <div className='header-nav'>
                 <div className='header-logo'>
-                    <img src='https://cdn.dsmcdn.com/web/logo/ty-web.svg' alt="logo"></img>
+                    <img src='https://cdn.dsmcdn.com/web/logo/ty-web.svg' alt="logo" onClick={()=> history.push("/")}></img>
                 </div>
                 <div className='search-comp'>
                     <div className='header-search-bar'>
@@ -44,26 +44,26 @@ function Header() {
                     <div className='header-account-links'>
                         <div className='header-link-items'>
 
-                            <div className='header-link-item' onClick={()=> history.push("/login")}>
-                                <RiUser3Fill className='header-list-icon'></RiUser3Fill>
-                                <p>Giriş Yap</p>
+                            <div className='header-link-item' >
+                                <RiUser3Fill className='header-list-icon' size={"2.5em"}></RiUser3Fill>
+                                <p >Giriş Yap</p>
                             </div>
                             <div className="user-notloggedin-container">
-                                <div className="login-button">Giriş Yap</div>
-                                <div className="signup-button">Üye Ol</div>
+                                <div className="login-button" onClick={()=> history.push("/login")}>Giriş Yap</div>
+                                <div className="signup-button" onClick={()=> history.push("/login")}>Üye Ol</div>
                             </div>
                         </div>
                         <div className='header-link-items'>
 
                             <div className='header-link-item'>
-                                <MdOutlineFavorite className='header-list-icon'></MdOutlineFavorite>
+                                <MdOutlineFavorite className='header-list-icon' size={"2.5em"}></MdOutlineFavorite>
                                 <p>Favorilerim</p>
                             </div>
                         </div>
                         <div className='header-link-items'>
 
                             <div className='header-link-item'>
-                                <FaShoppingCart className='header-list-icon'></FaShoppingCart>
+                                <FaShoppingCart className='header-list-icon' size={"2.5em"}></FaShoppingCart>
                                 <p>Sepetim</p>
                             </div>
                         </div>
