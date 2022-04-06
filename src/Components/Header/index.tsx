@@ -7,15 +7,18 @@ import { RiUser3Fill } from "react-icons/ri"
 import { useEffect, useState } from "react"
 import categories from "../../kadinCategory.json"
 import menCategories from "../../erkekCategory.json"
-import axios from "axios"
 import { useHistory } from "react-router-dom"
+import axios from "axios"
+import x from "../FeaturedProduct/products.json"
 
 function Header() {
 
     const [active, setActive] = useState<boolean>(false)
     const [active1, setActive1] = useState<boolean>(false)
-
+    const [data, setData] = useState<any>()
     const history = useHistory();
+
+    
 
     return (
         <div className='header'>
@@ -30,7 +33,7 @@ function Header() {
             </div>
             <div className='header-nav'>
                 <div className='header-logo'>
-                    <img src='https://cdn.dsmcdn.com/web/logo/ty-web.svg' alt="logo" onClick={()=> history.push("/")}></img>
+                    <img src='https://cdn.dsmcdn.com/web/logo/ty-web.svg' alt="logo" onClick={() => history.push("/")}></img>
                 </div>
                 <div className='search-comp'>
                     <div className='header-search-bar'>
@@ -49,8 +52,8 @@ function Header() {
                                 <p >Giriş Yap</p>
                             </div>
                             <div className="user-notloggedin-container">
-                                <div className="login-button" onClick={()=> history.push("/login")}>Giriş Yap</div>
-                                <div className="signup-button" onClick={()=> history.push("/login")}>Üye Ol</div>
+                                <div className="login-button" onClick={() => history.push("/login")}>Giriş Yap</div>
+                                <div className="signup-button" onClick={() => history.push("/login")}>Üye Ol</div>
                             </div>
                         </div>
                         <div className='header-link-items'>

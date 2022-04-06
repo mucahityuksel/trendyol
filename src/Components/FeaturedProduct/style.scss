@@ -41,6 +41,7 @@
     border: 1px solid #f2e5da;
     padding: 0px 20px;
     cursor: pointer;
+    height: 250px;
     background-color: white;
     
     .product-image {
@@ -54,7 +55,8 @@
             
         }
         img {
-            width: 120px;
+            width: 130px;
+            width: 130px;
             margin: 0px auto;
             object-fit: contain;
             transition: transform 1s ease;

@@ -6,7 +6,7 @@ import "slick-carousel/slick/slick-theme.css";
 import '@brainhubeu/react-carousel/lib/style.css';
 import { MdOutlineFavoriteBorder } from "react-icons/md"
 import Carousel, { slidesToShowPlugin } from '@brainhubeu/react-carousel';
-
+import mock from "./mockProducts.json"
 
 
 function FeaturedProduct({ title }: any) {
@@ -55,20 +55,22 @@ function FeaturedProduct({ title }: any) {
                                                 <div className='product-like'>
                                                     <div className='icon-div'><MdOutlineFavoriteBorder className='like-icon'></MdOutlineFavoriteBorder></div>
                                                 </div>
-                                                <div className='product-cargo'>
-                                                    <div className='cargo'>
-                                                        <div className='cargo-text'> KARGO BEDAVA</div>
-                                                    </div>
-                                                </div>
+                                                {
+                                                    item.cargo === true ? <div className='product-cargo'>
+                                                        <div className='cargo'>
+                                                            <div className='cargo-text'> KARGO BEDAVA</div>
+                                                        </div>
+                                                    </div> : <div></div>
+                                                }
                                             </div>
                                         </div>
-                                        <div className='product-sale'>
+                                        {item.mostSales === true ? <div className='product-sale'>
                                             <div className='product-sale-icon'>
                                                 <div className='sale'>
                                                     <img alt='' src='https://cdn.dsmcdn.com/mnresize/250/250/marketing/datascience/automation/2020/12/9/EnCokSatan_202012091129.png'></img>
                                                 </div>
                                             </div>
-                                        </div>
+                                        </div> : <div></div>}
                                         <div className='product-price'>
                                             <span className='price'>{item.price} TL</span>
                                         </div>
