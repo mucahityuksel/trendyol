@@ -1,14 +1,23 @@
-export interface Product {
-    id: number,
-    star: number,
+export interface Products {
+    id: Number,
+    name: String,
+    price: Number,
+    brand: String,
+    basketDiscount: Boolean,
+    image: [],
+    star: Number,
     smallImages: [],
-    price: number,
-    name: string,
-    mostSales: boolean,
-    image: string,
-    discount: string,
-    description: string,
-    cargo: boolean,
-    brand: string,
-    baskedDiscount: boolean
+    cargo: Boolean,
+    productInformation: [],
+    mostSales: Boolean,
+    category: Number,
+    Seller: {
+        score: Number,
+        followers: Number
+    },
+    rating: Number,
+    comment: Number,
+    question: Number,
+    like: Number,
+    productQuestion: Number
 }

@@ -6,20 +6,19 @@ import "slick-carousel/slick/slick-theme.css";
 import '@brainhubeu/react-carousel/lib/style.css';
 import { MdOutlineFavoriteBorder } from "react-icons/md"
 import Carousel, { slidesToShowPlugin } from '@brainhubeu/react-carousel';
-import mock from "./mockProducts.json"
+import { useDispatch, useSelector } from 'react-redux';
+import { getProduct } from '../../redux/action/product';
+import newData from "./mockProducts.json"
+import { Products } from './type';
 
-
-function FeaturedProduct({ title }: any) {
+function FeaturedProduct({ title }: any,{data1} : {data1:Products[]}) {
 
     const [data, setData] = useState([])
-
+    const dispatch = useDispatch();
+   
     useEffect(() => {
-        axios.get("http://localhost:3001/products")
-            .then((res) => {
-                console.log(res.data)
-                setData(res.data)
-            })
-            .catch((e) => console.log(e))
+        //dispatch(getProduct)
+        
     }, [])
 
     return (
@@ -42,8 +41,9 @@ function FeaturedProduct({ title }: any) {
                             },
                         ]}
                     >
+
                         {
-                            data?.map((item: any) => {
+                            newData?.map((item: any) => {
                                 return <div>
                                     <div className="product-card">
                                         <div className='product-image'><img alt='' src={item.image}></img> </div>
@@ -79,8 +79,6 @@ function FeaturedProduct({ title }: any) {
                             })
                         }
                     </Carousel>
-
-
                 </div>
             </div>
         </div>
