@@ -15,10 +15,12 @@ function FeaturedProduct({ title }: any,{data1} : {data1:Products[]}) {
 
     const [data, setData] = useState([])
     const dispatch = useDispatch();
-   
+    const [element, setElement] = useState<any[]>([])
+    const store = useSelector((state:any) => state.product)
     useEffect(() => {
-        //dispatch(getProduct)
+        dispatch(getProduct())
         
+        console.log(store)
     }, [])
 
     return (
