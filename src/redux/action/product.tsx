@@ -1,28 +1,29 @@
 import axios from "axios";
-import { DispatchType, GET_PRODUCT, ProductAction } from "./type";
+import { Action,ActionCreator, Dispatch } from "redux";
+import { ThunkAction } from "redux-thunk";
+import { ActionTypes, ProductsState } from "./type";
 
-export const getProduct = () => {
 
-    return async (dispatch: any) => {
-        axios.get("http://localhost:3001/products")
+export type AppThunk = ActionCreator<ThunkAction<void, ProductsState, null, Action<string>>>;
+
+export const fetchRequest: AppThunk = () => {
+    return (dispatch : Dispatch)  => {
+        try {
+            axios.get("http://localhost:3001/products")
             .then((res) => {
-                const action: ProductAction = {
-                    type: GET_PRODUCT,
+                return dispatch({
+                    type : ActionTypes.FETCH_SUCCESS,
                     payload: res.data
-                }
-
-                return setProduct(action)
+                })
 
             })
             .catch((e) => console.log(e))
+           
+        } catch (error) {
+            return dispatch({
+                type : ActionTypes.FETCH_ERROR
+            })
+        }
     }
 }
 
-export const setProduct = (res: ProductAction) => {
-    console.log(res)
-    return (dispatch: DispatchType) => {
-        setTimeout(() => {
-            dispatch(res);
-          }, 500);
-    }
-}

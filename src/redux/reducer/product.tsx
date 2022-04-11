@@ -1,23 +1,33 @@
-import { Products } from "../../Components/FeaturedProduct/type"
-import { GET_PRODUCT, ProductAction, ProductState } from "../action/type"
+import { Reducer } from "redux"
+import { ActionTypes, ProductsState} from "../action/type"
 
 
-const initialState: ProductState = {
-    product: []
+
+const initialState : ProductsState = {
+    product : [],
+    error : "",
+    loading : false
 }
 
-export const productReducer = (state: ProductState = initialState, action: ProductAction) => {
-    switch (action.type) {
 
-        case GET_PRODUCT:
-            const newP: Products | any = [];
-            console.log(newP)
+export const newReducer : Reducer<ProductsState> = (state = initialState, action) => {
+    switch (action.type) {
+        case ActionTypes.FETCH_REQUEST:{    
             return {
                 ...state,
-                product: state.product.concat(newP)
+                loading: true
             }
-
+        }
+            
+         case ActionTypes.FETCH_SUCCESS : {
+             return {
+                 ...state,
+                 loading : false,
+                 product : action.payload
+             }
+         }
+    
         default:
-            return state;
+            return state
     }
 }

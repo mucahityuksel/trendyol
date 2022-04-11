@@ -1,5 +1,4 @@
-import axios from 'axios'
-import { useEffect, useState } from 'react'
+import { useEffect } from 'react'
 import "./style.scss"
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -7,20 +6,15 @@ import '@brainhubeu/react-carousel/lib/style.css';
 import { MdOutlineFavoriteBorder } from "react-icons/md"
 import Carousel, { slidesToShowPlugin } from '@brainhubeu/react-carousel';
 import { useDispatch, useSelector } from 'react-redux';
-import { getProduct } from '../../redux/action/product';
-import newData from "./mockProducts.json"
+import { fetchRequest } from '../../redux/action/product';
 import { Products } from './type';
 
 function FeaturedProduct({ title }: any,{data1} : {data1:Products[]}) {
 
-    const [data, setData] = useState([])
     const dispatch = useDispatch();
-    const [element, setElement] = useState<any[]>([])
     const store = useSelector((state:any) => state.product)
     useEffect(() => {
-        dispatch(getProduct())
-        
-        console.log(store)
+        dispatch(fetchRequest())    
     }, [])
 
     return (
@@ -45,7 +39,7 @@ function FeaturedProduct({ title }: any,{data1} : {data1:Products[]}) {
                     >
 
                         {
-                            newData?.map((item: any) => {
+                            store.product?.map((item: any) => {
                                 return <div>
                                     <div className="product-card">
                                         <div className='product-image'><img alt='' src={item.image}></img> </div>
