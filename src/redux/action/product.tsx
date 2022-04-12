@@ -27,3 +27,21 @@ export const fetchRequest: AppThunk = () => {
     }
 }
 
+export const getSelected: AppThunk = (id:any) => {
+    return (dispatch:Dispatch) => {
+        try {
+            axios.get("http://localhost:3001/products/"+id)
+            .then((res) => {
+                return dispatch({
+                    type : ActionTypes.GET_SELECTED,
+                    payload : res.data
+                })
+            })
+            .catch((e) => console.log(e))
+        } catch (error) {
+            return dispatch({
+                type : ActionTypes.FETCH_ERROR
+            })
+        }
+    }
+}

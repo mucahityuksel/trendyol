@@ -1,9 +1,19 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import { useSelector } from 'react-redux'
 import BreadCrumbs from '../../Components/Breadcrumb'
+import Detail from '../../Components/Detail'
 
 import Header from '../../Components/Header'
 
 function ProductDetailPage() {
+
+  const data = useSelector((state: any) => state.product.selected)
+
+  useEffect(() => {
+    console.log(data)
+  }, [])
+
+
   return (
     <div style={{
       display: "flex",
@@ -11,7 +21,8 @@ function ProductDetailPage() {
     }}>
 
       <Header></Header>
-      <BreadCrumbs seperator=">"></BreadCrumbs>
+      <BreadCrumbs data={data}></BreadCrumbs>
+      <Detail data={data}></Detail>
     </div>
   )
 }

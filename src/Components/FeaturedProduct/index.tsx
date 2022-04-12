@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import "./style.scss"
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -6,7 +6,7 @@ import '@brainhubeu/react-carousel/lib/style.css';
 import { MdOutlineFavoriteBorder } from "react-icons/md"
 import Carousel, { slidesToShowPlugin } from '@brainhubeu/react-carousel';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchRequest } from '../../redux/action/product';
+import { fetchRequest, getSelected } from '../../redux/action/product';
 import { useHistory } from 'react-router-dom';
 
 
@@ -14,7 +14,7 @@ function FeaturedProduct({ title }: any) {
 
     const dispatch = useDispatch();
     const store = useSelector((state: any) => state.product)
-
+    const [x,setX] = useState(0)
     const history = useHistory();
 
     useEffect(() => {
@@ -45,6 +45,8 @@ function FeaturedProduct({ title }: any) {
                             store.product?.map((item: any) => {
                                 return <div>
                                     <div className="product-card" onClick={() => {
+                                        dispatch(getSelected(item.id))
+                                        setX(item.id)
                                         history.push(`product`)
                                     }}>
                                         <div className='product-image'><img alt='' src={item.image}></img> </div>

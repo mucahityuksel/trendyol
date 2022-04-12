@@ -15,7 +15,12 @@
         
         .bread-home {
             color: black;
+            font-size: 14px;
+            font-family: $font;
         }
-       
+        .rs-breadcrumb-separator {
+            color: $main-color;
+            display: flex;
+        }
     }
 }
