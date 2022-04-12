@@ -7,14 +7,18 @@ import { MdOutlineFavoriteBorder } from "react-icons/md"
 import Carousel, { slidesToShowPlugin } from '@brainhubeu/react-carousel';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchRequest } from '../../redux/action/product';
-import { Products } from './type';
+import { useHistory } from 'react-router-dom';
 
-function FeaturedProduct({ title }: any,{data1} : {data1:Products[]}) {
+
+function FeaturedProduct({ title }: any) {
 
     const dispatch = useDispatch();
-    const store = useSelector((state:any) => state.product)
+    const store = useSelector((state: any) => state.product)
+
+    const history = useHistory();
+
     useEffect(() => {
-        dispatch(fetchRequest())    
+        dispatch(fetchRequest())
     }, [])
 
     return (
@@ -37,11 +41,12 @@ function FeaturedProduct({ title }: any,{data1} : {data1:Products[]}) {
                             },
                         ]}
                     >
-
                         {
                             store.product?.map((item: any) => {
                                 return <div>
-                                    <div className="product-card">
+                                    <div className="product-card" onClick={() => {
+                                        history.push(`product`)
+                                    }}>
                                         <div className='product-image'><img alt='' src={item.image}></img> </div>
                                         <div className="product-name"><span>{item.brand}</span></div>
                                         <div className="product-name1"><span>{item.name}</span> </div>

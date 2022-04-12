@@ -1,13 +1,17 @@
 import React from 'react'
-import { Header } from 'rsuite'
+import BreadCrumbs from '../../Components/Breadcrumb'
+
+import Header from '../../Components/Header'
 
 function ProductDetailPage() {
   return (
     <div style={{
-        display : "flex",
-        flexDirection : "column"
+      display: "flex",
+      flexDirection: "column"
     }}>
-      <Header/>
+
+      <Header></Header>
+      <BreadCrumbs seperator=">"></BreadCrumbs>
     </div>
   )
 }

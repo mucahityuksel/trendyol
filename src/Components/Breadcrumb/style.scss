@@ -1,0 +1,21 @@
+@import "../../assets/veriables.scss";
+
+.breadcrumb {
+    width: 100%;
+    margin-top: 125px;
+    color: $main-color;
+    .breadcrumb-item {
+        max-width: 1200px;
+        width: 100%;
+        margin: 0px auto;
+        display: flex;
+        align-items: center;
+        color: black;
+        font-family: $font;
+        
+        .bread-home {
+            color: black;
+        }
+       
+    }
+}

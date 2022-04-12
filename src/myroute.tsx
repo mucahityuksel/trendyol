@@ -5,6 +5,7 @@ import {
 } from "react-router-dom";
 import Home from "./Pages/Home";
 import LoginPage from "./Pages/Login";
+import ProductDetailPage from "./Pages/ProductDetail";
 
 function MyRoute() {
   return <Router>
@@ -14,6 +15,9 @@ function MyRoute() {
       </Route>
       <Route path="/login">
         <LoginPage />
+      </Route>
+      <Route path="/product">
+        <ProductDetailPage />
       </Route>
     </Switch>
   </Router>

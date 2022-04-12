@@ -4,18 +4,16 @@ import { FiSearch } from "react-icons/fi"
 import { MdOutlineFavorite } from "react-icons/md"
 import { FaShoppingCart } from "react-icons/fa"
 import { RiUser3Fill } from "react-icons/ri"
-import { useEffect, useState } from "react"
+import { useState } from "react"
 import categories from "../../kadinCategory.json"
 import menCategories from "../../erkekCategory.json"
 import { useHistory } from "react-router-dom"
-import axios from "axios"
-import x from "../FeaturedProduct/products.json"
+
 
 function Header() {
 
     const [active, setActive] = useState<boolean>(false)
     const [active1, setActive1] = useState<boolean>(false)
-    const [data, setData] = useState<any>()
     const history = useHistory();
 
     
