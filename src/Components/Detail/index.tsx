@@ -1,11 +1,12 @@
 import { AiFillStar } from "react-icons/ai"
-import { FaStarHalf } from "react-icons/fa"
+import { FaStarHalf, FaCarSide } from "react-icons/fa"
 import { BsFillBookmarkFill } from "react-icons/bs"
+import { MdOutlineFavoriteBorder } from "react-icons/md"
 import "./style.scss"
 
 function Detail(data: { data: any[] }) {
 
-    
+
 
     return (
         <div className="product-detail-container">
@@ -53,6 +54,38 @@ function Detail(data: { data: any[] }) {
                         <div className="product-bookmark">
                             <BsFillBookmarkFill color="#f27a1a"></BsFillBookmarkFill>
                             <span>Koleksiyonlara ekle</span>
+                        </div>
+                        <div className="buy-container">
+                            <div className="buy-button">
+                                <button>Sepete Ekle</button>
+                            </div>
+                            <div className="like-button">
+                                <MdOutlineFavoriteBorder className="like-icon" size="1.5em"></MdOutlineFavoriteBorder>
+                            </div>
+
+                        </div>
+                        <div className="cargo-info">
+                            <div className="cargo-info-text">
+                                <FaCarSide color="#0bc15c"></FaCarSide>
+                                <span className="cargo-deliver">Hızlı Teslimat</span>
+                                <span className="cargo-day">1 gün içinde kargoda</span>
+                            </div>
+                            <div className="favorites-info">
+                                <MdOutlineFavoriteBorder color="#999"></MdOutlineFavoriteBorder>
+                                <span>{data.data[0].like} favori</span>
+                            </div>
+                        </div>
+                        <div className="product-information">
+                            <div className="title">
+                                <span>Öne Çıkan Bilgiler</span>
+                            </div>
+                            <ul className="information-list">
+                                {
+                                    data.data[0].productInformation.map((item:any) => {
+                                        return <li>{item}</li>
+                                    })
+                                }
+                            </ul>
                         </div>
                     </div>
 
