@@ -1,5 +1,6 @@
-import React, { useEffect } from 'react'
+
 import { useSelector } from 'react-redux'
+
 import BreadCrumbs from '../../Components/Breadcrumb'
 import Detail from '../../Components/Detail'
 
@@ -9,9 +10,7 @@ function ProductDetailPage() {
 
   const data = useSelector((state: any) => state.product.selected)
 
-  useEffect(() => {
-    console.log(data)
-  }, [])
+
 
 
   return (

@@ -5,6 +5,7 @@ import "./style.scss"
 
 function Detail(data: { data: any[] }) {
 
+    
 
     return (
         <div className="product-detail-container">
