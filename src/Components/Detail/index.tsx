@@ -1,7 +1,9 @@
-import { AiFillStar } from "react-icons/ai"
+import { AiFillStar, AiOutlineRight, AiOutlineInfoCircle } from "react-icons/ai"
 import { FaStarHalf, FaCarSide } from "react-icons/fa"
-import { BsFillBookmarkFill } from "react-icons/bs"
+import { BsFillBookmarkFill, BsTagFill } from "react-icons/bs"
 import { MdOutlineFavoriteBorder } from "react-icons/md"
+import { SiHomeassistantcommunitystore } from "react-icons/si"
+import { IoMdText } from "react-icons/io"
 import "./style.scss"
 
 function Detail(data: { data: any[] }) {
@@ -81,7 +83,7 @@ function Detail(data: { data: any[] }) {
                             </div>
                             <ul className="information-list">
                                 {
-                                    data.data[0].productInformation.map((item:any) => {
+                                    data.data[0].productInformation.map((item: any) => {
                                         return <li>{item}</li>
                                     })
                                 }
@@ -89,9 +91,51 @@ function Detail(data: { data: any[] }) {
                         </div>
                     </div>
 
+                </div>
+                <div className="right-side">
+                    <div className="product-campaigne">
+                        <div className="campaigne-header">
+                            <span>ÜRÜNÜN KAMPANYALARI</span>
+                        </div>
+                        <div className="campaigne-body">
+                            <BsTagFill color="#f27a1a"></BsTagFill>
+                            <span>60 TL ve Üzeri Kargo Bedava</span>
+                            <AiOutlineRight color="#f27a1a"></AiOutlineRight>
+                        </div>
+                        <div className="campaigne-footer">
+                            <BsTagFill color="#f27a1a"></BsTagFill>
+                            <div className="basket-info">
+                                <span>Sepette İndirimli</span>
+                                <p>Son 3 Gün!</p>
+                            </div>
+                            <AiOutlineRight color="#f27a1a"></AiOutlineRight>
+                        </div>
+                    </div>
+                    <div className="product-brand">
+                        <div className="brand-header">
+                            <div className="brand-info">
+                                <span>{data.data[0].brand} </span>
+                                <div>{data.data[0].Seller.score} </div>
+                                <AiOutlineInfoCircle color="#f27a1a"></AiOutlineInfoCircle>
+                            </div>
+                        </div>
+
+                        <div className="campaigne-footer1">
+                            <SiHomeassistantcommunitystore color="#f27a1a"></SiHomeassistantcommunitystore>
+                            <div className="basket-info">
+                                <span>Mağazayı Gör İndirimli</span>
+                                <p>{data.data[0].Seller.followers} Takipçi</p>
+                            </div>
+                            <AiOutlineRight color="#f27a1a"></AiOutlineRight>
+                        </div>
+                        <div className="campaigne-body">
+                            <IoMdText color="#f27a1a"></IoMdText>
+                            <span>Ürün Soruları ({data.data[0].productQuestion})</span>
+                            <AiOutlineRight color="#f27a1a"></AiOutlineRight>
+                        </div>
+                    </div>
 
                 </div>
-                <div className="right-side">right</div>
             </div>
         </div>
     )
