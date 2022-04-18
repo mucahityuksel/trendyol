@@ -1,7 +1,19 @@
-import React from 'react'
+import React, { useState } from 'react'
 import "./style.scss"
+import 'firebase/compat/auth';
+import 'firebase/compat/firestore';
+import {
+    createUserWithEmailAndPassword,
+    initializeAuth,
+    browserLocalPersistence,
+    indexedDBLocalPersistence,
+    browserSessionPersistence,
+    browserPopupRedirectResolver,
+} from 'firebase/auth';
 import { Checkbox, Nav } from "rsuite"
 import { ImFacebook2, ImGoogle2 } from "react-icons/im";
+import { app} from '../../firebase';
+
 
 enum Gender {
     MALE = "MALE",
@@ -10,9 +22,14 @@ enum Gender {
 
 function LoginForm() {
     const [active, setActive] = React.useState('home');
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
 
 
-
+    const auth = initializeAuth(app, {
+        persistence: [indexedDBLocalPersistence, browserLocalPersistence, browserSessionPersistence],
+        popupRedirectResolver: browserPopupRedirectResolver,
+    });
     const [gender, setGender] = React.useState(Gender.MALE);
     const CustomNav = ({ active, onSelect, ...props }: any) => {
         return (
@@ -37,16 +54,24 @@ function LoginForm() {
                     <div className='login-form'>
                         <div className='email-bar'>
                             <label>E posta</label>
-                            <input type="email"></input>
+                            <input type="email"
+                                onChange={(e: any) => {
+                                    setEmail(e.target.value)
+                                }}
+                            ></input>
                         </div>
                         <div className='password-bar'>
                             <label>Şifre</label>
-                            <input type="password"></input>
+                            <input type="password"
+                                onChange={(e: any) => {
+                                    setPassword(e.target.value)
+                                }}
+                            ></input>
                         </div>
                         <div className='forgot-password'>
                             <span>Şifremi Unuttum</span>
                         </div>
-                        <button className='login-button'>GİRİŞ YAP</button>
+                        <button className='login-button' >GİRİŞ YAP</button>
                         <div className='social-login'>
                             <div className='facebook'>
                                 <div className='login-logo'><ImFacebook2 size={"2em"} color="#4267B2"></ImFacebook2></div>
@@ -67,11 +92,19 @@ function LoginForm() {
                     : <div className='login-form'>
                         <div className='email-bar'>
                             <label>E posta</label>
-                            <input type="email"></input>
+                            <input type="email"
+                                onChange={(e: any) => {
+                                    setEmail(e.target.value)
+                                }}
+                            ></input>
                         </div>
                         <div className='password-bar'>
                             <label>Şifre</label>
-                            <input type="password"></input>
+                            <input type="password"
+                                onChange={(e: any) => {
+                                    setPassword(e.target.value)
+                                }}
+                            ></input>
                         </div>
                         <div className="password-info">
                             <span>Şifreniz en az 7 karakter olmalı, harf ve rakam içermelidir.</span>
@@ -81,14 +114,16 @@ function LoginForm() {
                             <button className={gender === Gender.FEMALE ? 'women-button-active' : "women-button"} onClick={() => { setGender(Gender.FEMALE) }}>Kadın</button>
                             <button className={gender === Gender.MALE ? 'men-button-active' : "men-button"} onClick={() => { setGender(Gender.MALE) }}>Erkek</button>
                         </div>
-                        <button className='login-button'>ÜYE OL</button>
+                        <button className='login-button' onClick={() => {
+                            createUserWithEmailAndPassword(auth,email, password)
+                        }}>ÜYE OL</button>
                         <div className='condition'>Üye Ol’a basarak<b>Üyelik Koşulları</b>nı kabul ediyorum.</div>
                         <div className='data-save'>
                             <Checkbox className='check'></Checkbox>
                             <span>Kampanyalardan haberdar olabilmem için kişisel verilerimin<br></br> işlenmesini ve tarafıma elektronik ileti gönderilmesini kabul <br></br>ediyorum.</span>
                         </div>
                         <div className='data-save'>
-                            <Checkbox  className='check'></Checkbox>
+                            <Checkbox className='check'></Checkbox>
                             <span>Kişisel verilerimin işlenmesine yönelik <b>aydınlatma metnini</b> <br></br> okudum ve anladım.</span>
                         </div>
                         <div className='social-login'>
