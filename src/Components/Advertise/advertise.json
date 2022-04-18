@@ -13,5 +13,20 @@
         "id": 3,
         "text": "mavi - Yeni Sezon",
         "image": "https://cdn.dsmcdn.com/ty376/pimWidgetApi/mobile_20220329194851_mavi300322mobilkadin.jpg"
+    },
+    {
+        "id": 4,
+        "text": "trendyol Collection - Yeni Sezon",
+        "image": "https://cdn.dsmcdn.com/ty394/campaign/banners/original/602615/ebe6cc87d8_0.jpg"
+    },
+    {
+        "id": 5,
+        "text": "Fenomen Kozmetik Seçimleri - Yeni Sezon",
+        "image": "https://cdn.dsmcdn.com/ty391/campaign/banners/original/603009/4b09265763_1.jpg"
+    },
+    {
+        "id": 6,
+        "text": "Bershka - Yeni Sezon",
+        "image": "https://cdn.dsmcdn.com/ty387/campaign/banners/original/594568/5388ce3a04_1.jpg"
     }
 ]

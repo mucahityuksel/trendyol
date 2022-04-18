@@ -10,6 +10,7 @@
         justify-content: space-between;
         flex-wrap: wrap;
         margin: 0px auto;
+        
         .advertise-card {
             width: 30.33%;
             display: flex;
@@ -18,6 +19,7 @@
             border-radius: $space-small;
             transition: transform 1s ease;
             box-shadow: 0 0 7px #d3d3d3;
+            margin-top: 20px;
             cursor: pointer;
             &:hover {
                 border: 1px solid $main-color;

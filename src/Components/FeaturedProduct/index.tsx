@@ -17,6 +17,7 @@ function FeaturedProduct({ title }: any) {
     const [x,setX] = useState(0)
     const history = useHistory();
 
+    
     useEffect(() => {
         dispatch(fetchRequest())
     }, [])

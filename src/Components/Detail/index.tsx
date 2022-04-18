@@ -126,6 +126,7 @@ function Detail(data: { data: any[] }) {
                                 <span>Mağazayı Gör İndirimli</span>
                                 <p>{data.data[0].Seller.followers} Takipçi</p>
                             </div>
+                            
                             <AiOutlineRight color="#f27a1a"></AiOutlineRight>
                         </div>
                         <div className="campaigne-body">

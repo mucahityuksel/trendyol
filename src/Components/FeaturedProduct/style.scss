@@ -35,7 +35,7 @@
 
 .product-card {
     width: 240px;
-
+    margin-top: 25px;
     display: flex;
     flex-direction: column;
     border: 1px solid #f2e5da;
@@ -43,16 +43,14 @@
     cursor: pointer;
     height: 250px;
     background-color: white;
-    
+
     .product-image {
         display: flex;
-      
-       
-       
+
+        padding: 15px;
         transition: transform 1s ease;
         &:hover {
             transform: scale(1.01);
-            
         }
         img {
             width: 130px;
@@ -62,7 +60,6 @@
             transition: transform 1s ease;
             &:hover {
                 transform: scale(1.01);
-                
             }
         }
     }
