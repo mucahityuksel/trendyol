@@ -62,7 +62,7 @@ function Header() {
 
                             <div className='header-link-item' >
                                 <RiUser3Fill className='header-list-icon' size={"2.5em"}></RiUser3Fill>
-                                <p >Giriş Yap</p>
+                                <p >{load === false ? "Giriş Yap" : "Hesabım"}</p>
                             </div>
                             {
                                 load === false ? <div className="user-notloggedin-container">

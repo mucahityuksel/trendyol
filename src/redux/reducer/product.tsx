@@ -7,7 +7,29 @@ const initialState: ProductsState = {
     product: [],
     error: "",
     loading: false,
-    selected: {}
+    selected: {
+        id: 0,
+    name: "",
+    price: 0,
+    brand: "",
+    basketDiscount: false,
+    image: [],
+    star: 0,
+    smallImages: [],
+    cargo: false,
+    productInformation: [],
+    mostSales: false,
+    category: 0,
+    Seller: {
+        score: 0,
+        followers: 0
+    },
+    rating: 0,
+    comment: 0,
+    question: 0,
+    like: 0,
+    productQuestion: 0
+    }
 }
 
 
