@@ -48,11 +48,12 @@ function FeaturedProduct({ title }: any) {
                                     <div className="product-card" onClick={() => {
                                         dispatch(getSelected(item.id))
                                         setX(item.id)
-                                        history.push(`product`)
+                                        history.push(`/product/${item.id}`)
                                     }}>
                                         <div className='product-image'><img alt='' src={item.image}></img> </div>
                                         <div className="product-name"><span>{item.brand}</span></div>
                                         <div className="product-name1"><span>{item.name}</span> </div>
+
 
                                         <div className='product-details'>
                                             <div>

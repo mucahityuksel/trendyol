@@ -9,10 +9,11 @@ import {
     indexedDBLocalPersistence,
     browserSessionPersistence,
     browserPopupRedirectResolver,
+    signInWithEmailAndPassword,
 } from 'firebase/auth';
 import { Checkbox, Nav } from "rsuite"
 import { ImFacebook2, ImGoogle2 } from "react-icons/im";
-import { app} from '../../firebase';
+import { app } from '../../firebase';
 
 
 enum Gender {
@@ -20,17 +21,22 @@ enum Gender {
     FEMALE = "FEMALE"
 }
 
+
 function LoginForm() {
     const [active, setActive] = React.useState('home');
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
 
+    const [email1, setEmail1] = useState("");
+    const [password1, setPassword1] = useState("");
+    const [gender, setGender] = React.useState(Gender.MALE);
 
     const auth = initializeAuth(app, {
         persistence: [indexedDBLocalPersistence, browserLocalPersistence, browserSessionPersistence],
         popupRedirectResolver: browserPopupRedirectResolver,
     });
-    const [gender, setGender] = React.useState(Gender.MALE);
+
+
     const CustomNav = ({ active, onSelect, ...props }: any) => {
         return (
             <Nav {...props} activeKey={active} onSelect={onSelect} justified>
@@ -56,7 +62,7 @@ function LoginForm() {
                             <label>E posta</label>
                             <input type="email"
                                 onChange={(e: any) => {
-                                    setEmail(e.target.value)
+                                    setEmail1(e.target.value)
                                 }}
                             ></input>
                         </div>
@@ -64,14 +70,18 @@ function LoginForm() {
                             <label>Şifre</label>
                             <input type="password"
                                 onChange={(e: any) => {
-                                    setPassword(e.target.value)
+                                    setPassword1(e.target.value)
                                 }}
                             ></input>
                         </div>
                         <div className='forgot-password'>
                             <span>Şifremi Unuttum</span>
                         </div>
-                        <button className='login-button' >GİRİŞ YAP</button>
+                        <button className='login-button' onClick={() => {
+                            signInWithEmailAndPassword(auth, email1, password1)
+                                .then((res) => console.log(res))
+                                .catch((err) => alert(err))
+                        }}>GİRİŞ YAP</button>
                         <div className='social-login'>
                             <div className='facebook'>
                                 <div className='login-logo'><ImFacebook2 size={"2em"} color="#4267B2"></ImFacebook2></div>
@@ -115,7 +125,7 @@ function LoginForm() {
                             <button className={gender === Gender.MALE ? 'men-button-active' : "men-button"} onClick={() => { setGender(Gender.MALE) }}>Erkek</button>
                         </div>
                         <button className='login-button' onClick={() => {
-                            createUserWithEmailAndPassword(auth,email, password)
+                            createUserWithEmailAndPassword(auth, email, password)
                         }}>ÜYE OL</button>
                         <div className='condition'>Üye Ol’a basarak<b>Üyelik Koşulları</b>nı kabul ediyorum.</div>
                         <div className='data-save'>

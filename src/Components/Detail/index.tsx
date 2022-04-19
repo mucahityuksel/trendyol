@@ -5,11 +5,18 @@ import { MdOutlineFavoriteBorder } from "react-icons/md"
 import { SiHomeassistantcommunitystore } from "react-icons/si"
 import { IoMdText } from "react-icons/io"
 import "./style.scss"
+import { useParams } from "react-router"
+import { useEffect } from "react"
 
 function Detail(data: { data: any[] }) {
 
 
+    const params = useParams();
 
+    
+    useEffect(()=>{
+        console.log(params)
+    },[])
     return (
         <div className="product-detail-container">
             <div className="detail-bar">

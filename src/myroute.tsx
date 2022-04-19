@@ -16,7 +16,7 @@ function MyRoute() {
       <Route path="/login">
         <LoginPage />
       </Route>
-      <Route path="/product">
+      <Route path="/product/:id">
         <ProductDetailPage />
       </Route>
     </Switch>
