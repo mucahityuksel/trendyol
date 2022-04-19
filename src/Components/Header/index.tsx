@@ -1,13 +1,17 @@
 
 import "./style.scss"
-import { FiSearch } from "react-icons/fi"
-import { MdOutlineFavorite } from "react-icons/md"
-import { FaShoppingCart } from "react-icons/fa"
-import { RiUser3Fill } from "react-icons/ri"
-import { useState } from "react"
+import { FiMail, FiSearch } from "react-icons/fi"
+import { MdOutlineFavorite ,MdLiveHelp} from "react-icons/md"
+import { FaBox, FaShoppingCart, FaUser } from "react-icons/fa"
+import { RiUser3Fill, RiLogoutBoxRLine, RiMessage2Line } from "react-icons/ri"
+import { useEffect, useState } from "react"
 import categories from "../../kadinCategory.json"
 import menCategories from "../../erkekCategory.json"
 import { useHistory } from "react-router-dom"
+import { BsWallet2 } from "react-icons/bs"
+import { HiOutlineTicket } from "react-icons/hi"
+import { GiCutDiamond } from "react-icons/gi"
+
 
 
 function Header() {
@@ -16,8 +20,19 @@ function Header() {
     const [active1, setActive1] = useState<boolean>(false)
     const history = useHistory();
 
-    
+    const [load, setLoad] = useState<boolean>(false);
+    const user: any = localStorage.getItem("user")
 
+    useEffect(() => {
+
+        console.log(user)
+        if (user !== "") {
+            setLoad(true)
+            console.log(user)
+        } else {
+            setLoad(false)
+        }
+    }, [load])
     return (
         <div className='header'>
             <div className='wrapper'>
@@ -49,10 +64,55 @@ function Header() {
                                 <RiUser3Fill className='header-list-icon' size={"2.5em"}></RiUser3Fill>
                                 <p >Giriş Yap</p>
                             </div>
-                            <div className="user-notloggedin-container">
-                                <div className="login-button" onClick={() => history.push("/login")}>Giriş Yap</div>
-                                <div className="signup-button" onClick={() => history.push("/login")}>Üye Ol</div>
-                            </div>
+                            {
+                                load === false ? <div className="user-notloggedin-container">
+                                    <div className="login-button" onClick={() => history.push("/login")}>Giriş Yap</div>
+                                    <div className="signup-button" onClick={() => history.push("/login")}>Üye Ol</div>
+                                </div> :
+                                    <div className="user-notloggedin-container1">
+                                        <div className="username">{user}</div>
+                                        <div className="login-button1">
+                                            <FaBox></FaBox>
+                                            <span>Siparişlerim</span>
+                                        </div>
+                                        <div className="login-button1">
+                                            <RiMessage2Line></RiMessage2Line>
+                                            <span>Değerlendirmelerim</span>
+                                        </div>
+                                        <div className="login-button1">
+                                            <FiMail></FiMail>
+                                            <span>Mesajlarım</span>
+                                        </div>
+                                        <div className="login-button1">
+                                            <BsWallet2></BsWallet2>
+                                            <span>Trendyol Cüzdanım</span>
+                                        </div>
+                                        <div className="login-button1">
+                                            <HiOutlineTicket></HiOutlineTicket>
+                                            <span>İndirim Kuponlarım</span>
+                                        </div>
+                                        <div className="login-button1">
+                                            <FaUser></FaUser>
+                                            <span>Kullanıcı Bilgilerim</span>
+                                        </div>
+                                        <div className="login-button1">
+                                            <GiCutDiamond></GiCutDiamond>
+                                            <span>Trendyol Elite</span>
+                                        </div>
+                                        <div className="login-button1">
+                                            <MdLiveHelp></MdLiveHelp>
+                                            <span>Trendyol Asistan</span>
+                                        </div>
+                                        <div className="login-button1" onClick={() => {
+                                            localStorage.setItem("user", "")
+                                            history.push("/login")
+                                        }}>
+                                            <RiLogoutBoxRLine></RiLogoutBoxRLine>
+                                            <span>Çıkış Yap</span>
+                                        </div>
+
+                                    </div>
+                            }
                         </div>
                         <div className='header-link-items'>
 

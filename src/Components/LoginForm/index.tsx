@@ -14,6 +14,7 @@ import {
 import { Checkbox, Nav } from "rsuite"
 import { ImFacebook2, ImGoogle2 } from "react-icons/im";
 import { app } from '../../firebase';
+import { useHistory } from 'react-router-dom';
 
 
 enum Gender {
@@ -26,7 +27,7 @@ function LoginForm() {
     const [active, setActive] = React.useState('home');
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-
+    const history = useHistory()
     const [email1, setEmail1] = useState("");
     const [password1, setPassword1] = useState("");
     const [gender, setGender] = React.useState(Gender.MALE);
@@ -79,7 +80,10 @@ function LoginForm() {
                         </div>
                         <button className='login-button' onClick={() => {
                             signInWithEmailAndPassword(auth, email1, password1)
-                                .then((res) => console.log(res))
+                                .then((res) => {
+                                    localStorage.setItem("user", email1)
+                                    history.push("/")
+                                })
                                 .catch((err) => alert(err))
                         }}>GİRİŞ YAP</button>
                         <div className='social-login'>
@@ -93,7 +97,7 @@ function LoginForm() {
                             <div className='facebook'>
                                 <div className='login-logo'><ImGoogle2 size={"2em"} color='rgb(241, 66, 54)'></ImGoogle2></div>
                                 <div className='login-with'>
-                                    <span className='logo-title'>Facebook</span>
+                                    <span className='logo-title'>Google</span>
                                     <span className='logo-subtitle'>ile giriş yap</span>
                                 </div>
                             </div>
@@ -126,6 +130,12 @@ function LoginForm() {
                         </div>
                         <button className='login-button' onClick={() => {
                             createUserWithEmailAndPassword(auth, email, password)
+                                .then((res) => {
+                                    localStorage.setItem("user", email)
+                                    history.push("/")
+                                })
+                                .catch((err) => alert(err))
+
                         }}>ÜYE OL</button>
                         <div className='condition'>Üye Ol’a basarak<b>Üyelik Koşulları</b>nı kabul ediyorum.</div>
                         <div className='data-save'>

@@ -8,7 +8,6 @@
     display: flex;
     flex-direction: column;
     z-index: 50;
-    
 
     .wrapper {
         max-width: 1200px;
@@ -17,7 +16,6 @@
         margin: 0px auto;
         background-color: white !important;
         .first-header {
-     
             background-color: white !important;
             .header-top-list {
                 display: flex;
@@ -112,11 +110,14 @@
                     align-items: center;
                     cursor: pointer;
                     padding: 0px 7px;
-                    
+
                     position: relative;
                     color: #333;
                     font-family: "Source Sans Pro", sans-serif;
                     .user-notloggedin-container {
+                        display: none;
+                    }
+                    .user-notloggedin-container1 {
                         display: none;
                     }
 
@@ -131,7 +132,8 @@
                         &:hover {
                             color: $main-color;
                             transition: all ease 0.3s;
-                            .user-notloggedin-container {
+                            .user-notloggedin-container,
+                            .user-notloggedin-container1 {
                                 display: flex;
                                 flex-direction: column;
                                 padding: 10px;
@@ -145,6 +147,39 @@
                     &:hover {
                         color: $main-color;
                         transition: all ease 0.5s;
+                        .user-notloggedin-container1 {
+                            position: absolute;
+                            display: flex;
+                            flex-direction: column;
+                            padding: 10px;
+                            background-color: $white;
+                            top: 35px;
+                            border: $border;
+                            color: #333;
+                            width: 190px;
+                            transition: all ease 3s;
+                            z-index: 99;
+                            .login-button1 {
+                                display: flex;
+                                align-items: center;
+                                padding: 5px;
+                                gap: 10px;
+                                color: #666;
+                                border-radius: 6px;
+                                font-size: 13px;
+                                font-family: $font;
+                                &:hover {
+                                    color: $main-color;
+                                    transition: all ease 0.5s;
+                                }
+                            }
+                            .username {
+                                color: $main-color;
+                                padding: 5px;
+                                font-weight: 700;
+                                font-family: $font;
+                            }
+                        }
                         .user-notloggedin-container {
                             position: absolute;
                             display: flex;
@@ -154,7 +189,7 @@
                             top: 35px;
                             border: $border;
                             color: #333;
-                            width: 150px; 
+                            width: 150px;
                             transition: all ease 3s;
                             z-index: 99;
                             .login-button {
@@ -165,6 +200,7 @@
                                 font-size: 13px;
                                 font-weight: 700;
                             }
+
                             .signup-button {
                                 padding: 5px 0px;
                                 border: $border;
@@ -189,7 +225,6 @@
             margin: 0px auto;
             display: block;
             position: relative;
-            
 
             .header-category-list {
                 list-style: none;
@@ -225,7 +260,7 @@
                         width: 100%;
                         background: white;
                         left: 0;
-                        
+
                         box-sizing: border-box;
                         box-shadow: inset 0 0 1px 1px #ebebeb;
                         .subnav-center {
