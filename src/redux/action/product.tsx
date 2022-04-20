@@ -1,46 +1,65 @@
 import axios from "axios";
-import { Action,ActionCreator, Dispatch } from "redux";
+import { Action, ActionCreator, Dispatch } from "redux";
 import { ThunkAction } from "redux-thunk";
+import { User } from "../../Pages/Login/type";
 import { ActionTypes, ProductsState } from "./type";
 
 
 export type AppThunk = ActionCreator<ThunkAction<void, ProductsState, null, Action<string>>>;
 
 export const fetchRequest: AppThunk = () => {
-    return (dispatch : Dispatch)  => {
+    return (dispatch: Dispatch) => {
         try {
             axios.get("http://localhost:3001/products")
-            .then((res) => {
-                return dispatch({
-                    type : ActionTypes.FETCH_SUCCESS,
-                    payload: res.data
-                })
+                .then((res) => {
+                    return dispatch({
+                        type: ActionTypes.FETCH_SUCCESS,
+                        payload: res.data
+                    })
 
-            })
-            .catch((e) => console.log(e))
-           
+                })
+                .catch((e) => console.log(e))
+
         } catch (error) {
             return dispatch({
-                type : ActionTypes.FETCH_ERROR
+                type: ActionTypes.FETCH_ERROR
             })
         }
     }
 }
 
-export const getSelected: AppThunk = (id:any) => {
-    return (dispatch:Dispatch) => {
+export const getSelected: AppThunk = (id: any) => {
+    return (dispatch: Dispatch) => {
         try {
-            axios.get("http://localhost:3001/products/"+id)
-            .then((res) => {
-                return dispatch({
-                    type : ActionTypes.GET_SELECTED,
-                    payload : res.data
+            axios.get("http://localhost:3001/products/" + id)
+                .then((res) => {
+                    return dispatch({
+                        type: ActionTypes.GET_SELECTED,
+                        payload: res.data
+                    })
                 })
-            })
-            .catch((e) => console.log(e))
+                .catch((e) => console.log(e))
         } catch (error) {
             return dispatch({
-                type : ActionTypes.FETCH_ERROR
+                type: ActionTypes.FETCH_ERROR
+            })
+        }
+    }
+}
+
+export const saveUser: AppThunk = (user: User) => {
+    return (dispatch: Dispatch) => {
+        try {
+            axios.post("http://localhost:3001/user",user)
+                .then((res) => {
+                    return dispatch({
+                        type: ActionTypes.LOGIN,
+                        payload: user.email
+                    })
+                }).catch((e) => console.log(e))
+        } catch (error) {
+            return dispatch({
+                type: ActionTypes.FETCH_ERROR
             })
         }
     }

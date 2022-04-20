@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import "./style.scss"
 import 'firebase/compat/auth';
 import 'firebase/compat/firestore';
@@ -15,6 +15,10 @@ import { Checkbox, Nav } from "rsuite"
 import { ImFacebook2, ImGoogle2 } from "react-icons/im";
 import { app } from '../../firebase';
 import { useHistory } from 'react-router-dom';
+import { saveUser } from '../../redux/action/product';
+import { useDispatch, useSelector } from 'react-redux';
+import { User } from '../../Pages/Login/type';
+import axios from 'axios';
 
 
 enum Gender {
@@ -31,6 +35,21 @@ function LoginForm() {
     const [email1, setEmail1] = useState("");
     const [password1, setPassword1] = useState("");
     const [gender, setGender] = React.useState(Gender.MALE);
+
+    const dispatch = useDispatch();
+    const newdata = useSelector((state: any) => state)
+    const user = useRef<User>({
+        email: "",
+        id: "",
+        isLogin: false,
+        basket: [],
+        favorites: [],
+        order: []
+    })
+
+    useEffect(() => {
+        console.log(newdata)
+    }, [])
 
     const auth = initializeAuth(app, {
         persistence: [indexedDBLocalPersistence, browserLocalPersistence, browserSessionPersistence],
@@ -50,6 +69,11 @@ function LoginForm() {
         );
     }
 
+    const sendUser = (user: User) => {
+        axios.post("http://localhost:3001/user/add", user)
+            .then((res) => console.log(res))
+            .catch((e) => console.log(e))
+    }
 
     return (
         <div className='login-form-component'>
@@ -82,6 +106,8 @@ function LoginForm() {
                             signInWithEmailAndPassword(auth, email1, password1)
                                 .then((res) => {
                                     localStorage.setItem("user", email1)
+                                    console.log(res)
+
                                     history.push("/")
                                 })
                                 .catch((err) => alert(err))
@@ -132,6 +158,12 @@ function LoginForm() {
                             createUserWithEmailAndPassword(auth, email, password)
                                 .then((res) => {
                                     localStorage.setItem("user", email)
+                                    user.current.email = email
+                                    user.current.isLogin = false
+                                    user.current.id = res.user.uid;
+
+                                    sendUser(user.current)
+
                                     history.push("/")
                                 })
                                 .catch((err) => alert(err))

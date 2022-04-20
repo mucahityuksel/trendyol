@@ -1,4 +1,8 @@
 export interface User {
     email: string,
-    password: string
+    id : string,
+    isLogin : boolean,
+    favorites : [],
+    basket : [],
+    order : []
 }

@@ -8,6 +8,8 @@ import Carousel, { slidesToShowPlugin } from '@brainhubeu/react-carousel';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchRequest, getSelected } from '../../redux/action/product';
 import { useHistory } from 'react-router-dom';
+import datas from "./mockProducts.json"
+import axios from 'axios';
 
 
 function FeaturedProduct({ title }: any) {

@@ -5,6 +5,15 @@ import { ActionTypes, ProductsState } from "../action/type"
 
 const initialState: ProductsState = {
     product: [],
+    user : {
+        email : "",
+        id : "",
+        isLogin : false,
+        basket : [],
+        favorites : [],
+        order : []
+
+    },
     error: "",
     loading: false,
     selected: {
@@ -53,6 +62,13 @@ export const newReducer: Reducer<ProductsState> = (state = initialState, action)
                 ...state,
                 loading: false,
                 product: action.payload
+            }
+        }
+        case ActionTypes.LOGIN : {
+            console.log(action.payload)
+            return {
+                ...state,
+                user : action.payload
             }
         }
 
