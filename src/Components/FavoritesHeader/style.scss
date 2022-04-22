@@ -12,6 +12,7 @@
         justify-content: space-between;
         .favorite-header-left {
             display: flex;
+            gap : 25px;
             .favorite-title {
                 display: flex;
                 align-items: center;
@@ -20,6 +21,22 @@
                 border-bottom: 3px solid $main-color;
                 height: 70px;
                 gap: 8px;
+                span {
+                    font-size: 18px;
+                    font-family: $font;
+                }
+            }
+            .favorite-bookmark {
+                display: flex;
+                align-items: center;
+                color: #666;
+                cursor: pointer;
+                height: 70px;
+                gap: 8px;
+                transition: all ease 0.3s;
+                &:hover{
+                    color: $main-color;
+                }
                 span {
                     font-size: 18px;
                     font-family: $font;
