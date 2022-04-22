@@ -21,6 +21,7 @@ import { User } from '../../Pages/Login/type';
 import axios from 'axios';
 
 
+
 enum Gender {
     MALE = "MALE",
     FEMALE = "FEMALE"

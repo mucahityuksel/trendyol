@@ -117,7 +117,9 @@ function Header() {
                         </div>
                         <div className='header-link-items'>
 
-                            <div className='header-link-item'>
+                            <div className='header-link-item' onClick={()=> {
+                                history.push("/favorilerim")
+                            }}>
                                 <MdOutlineFavorite className='header-list-icon' size={"2.5em"}></MdOutlineFavorite>
                                 <p>Favorilerim</p>
                             </div>

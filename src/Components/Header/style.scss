@@ -75,6 +75,7 @@
                     border: 2px solid white;
                     border-radius: 5px;
                     transition: all ease 0.5s;
+                    padding: 0px 5px;
                     .search-input {
                         width: 100%;
                         font-size: 14px;
@@ -89,7 +90,6 @@
                     }
                     .search-icon {
                         color: $main-color;
-                        padding: 0px 10px;
                         font-size: 20px;
                     }
                     &:focus-within {
