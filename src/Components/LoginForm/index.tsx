@@ -38,7 +38,7 @@ function LoginForm() {
 
     const dispatch = useDispatch();
     const newdata = useSelector((state: any) => state)
-    const user = useRef<User>({
+    const user = useRef<any>({
         email: "",
         id: "",
         isLogin: false,
@@ -157,11 +157,13 @@ function LoginForm() {
                         <button className='login-button' onClick={() => {
                             createUserWithEmailAndPassword(auth, email, password)
                                 .then((res) => {
-                                    localStorage.setItem("user", email)
+                                    
                                     user.current.email = email
                                     user.current.isLogin = false
                                     user.current.id = res.user.uid;
 
+                                    
+                                    localStorage.setItem("user", email)
                                     sendUser(user.current)
 
                                     history.push("/")

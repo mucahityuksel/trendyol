@@ -5,6 +5,7 @@ import { ActionTypes, ProductsState } from "../action/type"
 
 const initialState: ProductsState = {
     product: [],
+    favorites : [],
     user : {
         email : "",
         id : "",
@@ -69,6 +70,14 @@ export const newReducer: Reducer<ProductsState> = (state = initialState, action)
             return {
                 ...state,
                 user : action.payload
+            }
+        }
+
+        case ActionTypes.ADD_FAVORITE : {
+            return {
+                ...state,
+                loading : false,
+                favorites : action.payload
             }
         }
 

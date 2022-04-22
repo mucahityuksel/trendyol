@@ -8,7 +8,8 @@ export enum ActionTypes {
     FETCH_SUCCESS = "FETCH_SUCCESS",
     FETCH_ERROR = "FETCH_ERROR",
     GET_SELECTED = "GET_SELECTED",
-    LOGIN = "LOGIN"
+    LOGIN = "LOGIN",
+    ADD_FAVORITE = "ADD_FAVORITE"
 }
 
 
@@ -16,13 +17,14 @@ export interface ProductsState {
     loading: boolean;
     product: Products[],
     selected :Products,
+    favorites : Products[]
     user : User
     error: string
 }
 
 export type ProductAction = {
     type: string,
-    payload: Products | User
+    payload: Products 
 }
 
 

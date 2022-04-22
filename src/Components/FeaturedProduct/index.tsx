@@ -6,7 +6,7 @@ import '@brainhubeu/react-carousel/lib/style.css';
 import { MdOutlineFavoriteBorder } from "react-icons/md"
 import Carousel, { slidesToShowPlugin } from '@brainhubeu/react-carousel';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchRequest, getSelected } from '../../redux/action/product';
+import { addFavorite, fetchRequest, getSelected } from '../../redux/action/product';
 import { useHistory } from 'react-router-dom';
 import datas from "./mockProducts.json"
 import axios from 'axios';
@@ -16,10 +16,10 @@ function FeaturedProduct({ title }: any) {
 
     const dispatch = useDispatch();
     const store = useSelector((state: any) => state.product)
-    const [x,setX] = useState(0)
+    const [x, setX] = useState(0)
     const history = useHistory();
+    const user = localStorage.getItem("user")
 
-    
     useEffect(() => {
         dispatch(fetchRequest())
     }, [])
@@ -60,7 +60,11 @@ function FeaturedProduct({ title }: any) {
                                         <div className='product-details'>
                                             <div>
                                                 <div className='product-like'>
-                                                    <div className='icon-div'><MdOutlineFavoriteBorder className='like-icon'></MdOutlineFavoriteBorder></div>
+                                                    <div className='icon-div'
+                                                        onClick={() => {
+                                                            dispatch(addFavorite(item,user))
+                                                        }}
+                                                    ><MdOutlineFavoriteBorder className='like-icon'></MdOutlineFavoriteBorder></div>
                                                 </div>
                                                 {
                                                     item.cargo === true ? <div className='product-cargo'>

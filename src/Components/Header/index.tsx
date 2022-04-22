@@ -104,6 +104,7 @@ function Header() {
                                             <span>Trendyol Asistan</span>
                                         </div>
                                         <div className="login-button1" onClick={() => {
+                                        
                                             localStorage.setItem("user", "")
                                             history.push("/login")
                                         }}>
