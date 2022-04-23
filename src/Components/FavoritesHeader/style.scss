@@ -41,6 +41,19 @@
                     font-size: 18px;
                     font-family: $font;
                 }
+                div{
+                    background-color: #ec1c36;
+                    width: 40px;
+                    height: 20px;
+                    color: white;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    font-weight: 600;
+                    font-family: $font;
+                    font-size: 12px;
+                    border-radius: 5px;
+                }
             }
         }
         .favorite-header-right {

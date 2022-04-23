@@ -17,6 +17,7 @@ function FavoritesHeader() {
                     <div className='favorite-bookmark'>
                         <BsFillBookmarkFill size={"1.5em"} ></BsFillBookmarkFill>
                         <span>Koleksiyonlarım</span>
+                        <div>YENİ</div>
                     </div>
                 </div>
                 <div className='favorite-header-right'>

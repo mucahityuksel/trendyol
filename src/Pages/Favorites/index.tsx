@@ -1,4 +1,5 @@
 import React from 'react'
+import FavoriteBody from '../../Components/FavoriteBody'
 import FavoritesHeader from '../../Components/FavoritesHeader'
 import Header from '../../Components/Header'
 
@@ -10,6 +11,7 @@ function FavoritePage() {
         }}>
             <Header></Header>
             <FavoritesHeader></FavoritesHeader>
+            <FavoriteBody></FavoriteBody>
         </div>
     )
 }
