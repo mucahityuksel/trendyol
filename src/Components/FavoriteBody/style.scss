@@ -97,18 +97,22 @@
             .product-card-titles {
                 margin-top: 220px;
                 display: flex;
+                text-overflow: ellipsis;
+                height: 55px;
                 .product-name2 {
                
                     text-align: start;
                     font-size: 14px;
                     font-family: $font;
                     text-overflow: ellipsis;
+             
                 }
                 .product-name1 {
                     text-align: start;
                     font-size: 14px;
                     font-weight: 800;
                     font-family: $font;
+                    text-overflow: ellipsis;
                 }
             }
             .product-rating1{

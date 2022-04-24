@@ -48,10 +48,10 @@ export const getSelected: AppThunk = (id: any) => {
     }
 }
 
-export const addFavorite: AppThunk = (data: Products,user:User) => {
+export const addFavorite: AppThunk = (data: Products, user: User) => {
     return (dispatch: Dispatch) => {
         try {
-            axios.put("http://localhost:3001/favorites", {data,user})
+            axios.put("http://localhost:3001/favorites", { data, user })
                 .then((res) => {
                     return dispatch({
                         type: ActionTypes.ADD_FAVORITE,
@@ -64,6 +64,26 @@ export const addFavorite: AppThunk = (data: Products,user:User) => {
                 type: ActionTypes.FETCH_ERROR
             })
         }
+    }
+}
+
+export const deleteFavorite: AppThunk = (data: Products, user: any) => {
+    return (dispatch: Dispatch) => {
+        try {
+            axios.put("http://localhost:3001/data/update/"+user,{data})
+                .then((res) => {
+                    return dispatch({
+                        type: ActionTypes.DELETE_FAVORITE,
+                        payload: res.data
+                    })
+                })
+                .catch((err) => console.log(err))
+        } catch (e) {
+            return dispatch({
+                type: ActionTypes.FETCH_ERROR
+            })
+        }
+
     }
 }
 
@@ -84,3 +104,4 @@ export const saveUser: AppThunk = (user: User) => {
         }
     }
 }
+

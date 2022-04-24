@@ -7,7 +7,7 @@ import { VscClose } from 'react-icons/vsc'
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import { User } from '../../Pages/Login/type';
-import { getSelected } from '../../redux/action/product';
+import { deleteFavorite, getSelected } from '../../redux/action/product';
 import { Products } from '../FeaturedProduct/type';
 import "./style.scss"
 
@@ -17,9 +17,12 @@ function FavoriteBody() {
     const user: any = localStorage.getItem("user")
     const [data, setData] = useState<any[]>([])
     const dispatch = useDispatch();
+    const newData = useSelector((state: any) => state)
     const history = useHistory();
+    const [load, setLoad] = useState(false)
     const [x, setX] = useState(0)
-    useEffect(() => {
+
+    const getDataFromApi = () => {
         axios.get(`http://localhost:3001/favorites?email=${user}`)
             .then((res) => {
                 console.log(res)
@@ -27,9 +30,15 @@ function FavoriteBody() {
                 console.log(data)
             })
             .catch((err) => console.log(err))
-    }, [])
+    }
+    useEffect(() => {
+
+        getDataFromApi()
+
+    }, [load])
 
 
+   
 
     return (
         <div className='favorite-body-container'>
@@ -59,7 +68,12 @@ function FavoriteBody() {
                                     </div>
                                 </div>
                                 <div className='delete-icon'>
-                                    <div className='icon'>
+                                    <div className='icon' onClick={async () => {
+
+                                        dispatch(deleteFavorite(item, user))
+                                        setLoad(!load)
+                                        getDataFromApi()
+                                    }}>
                                         <VscClose size={"2em"} className="close-icon"></VscClose>
                                     </div>
 

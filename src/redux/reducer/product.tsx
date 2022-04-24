@@ -1,3 +1,4 @@
+import { useSelector } from "react-redux"
 import { Reducer } from "redux"
 import { ActionTypes, ProductsState } from "../action/type"
 
@@ -5,45 +6,46 @@ import { ActionTypes, ProductsState } from "../action/type"
 
 const initialState: ProductsState = {
     product: [],
-    favorites : [],
-    user : {
-        email : "",
-        id : "",
-        isLogin : false,
-        basket : [],
-        favorites : [],
-        order : []
+    favorites: [],
+    user: {
+        email: "",
+        id: "",
+        isLogin: false,
+        basket: [],
+        favorites: [],
+        order: []
 
     },
     error: "",
     loading: false,
     selected: {
         id: 0,
-    name: "",
-    price: 0,
-    brand: "",
-    basketDiscount: false,
-    image: [],
-    star: 0,
-    smallImages: [],
-    cargo: false,
-    productInformation: [],
-    mostSales: false,
-    category: 0,
-    Seller: {
-        score: 0,
-        followers: 0
-    },
-    rating: 0,
-    comment: 0,
-    question: 0,
-    like: 0,
-    productQuestion: 0
+        name: "",
+        price: 0,
+        brand: "",
+        basketDiscount: false,
+        image: [],
+        star: 0,
+        smallImages: [],
+        cargo: false,
+        productInformation: [],
+        mostSales: false,
+        category: 0,
+        Seller: {
+            score: 0,
+            followers: 0
+        },
+        rating: 0,
+        comment: 0,
+        question: 0,
+        like: 0,
+        productQuestion: 0
     }
 }
 
 
 export const newReducer: Reducer<ProductsState> = (state = initialState, action) => {
+  
     switch (action.type) {
         case ActionTypes.FETCH_REQUEST: {
             return {
@@ -51,11 +53,11 @@ export const newReducer: Reducer<ProductsState> = (state = initialState, action)
                 loading: true
             }
         }
-        case ActionTypes.GET_SELECTED : {
+        case ActionTypes.GET_SELECTED: {
             return {
                 ...state,
-                loading : false,
-                selected : action.payload
+                loading: false,
+                selected: action.payload
             }
         }
         case ActionTypes.FETCH_SUCCESS: {
@@ -65,22 +67,28 @@ export const newReducer: Reducer<ProductsState> = (state = initialState, action)
                 product: action.payload
             }
         }
-        case ActionTypes.LOGIN : {
+        case ActionTypes.LOGIN: {
             console.log(action.payload)
             return {
                 ...state,
-                user : action.payload
+                user: action.payload
             }
         }
 
-        case ActionTypes.ADD_FAVORITE : {
+        case ActionTypes.ADD_FAVORITE: {
             return {
                 ...state,
-                loading : false,
-                favorites : action.payload
+                loading: false,
+                favorites: action.payload
             }
         }
-
+        case ActionTypes.DELETE_FAVORITE: {
+            return {
+                ...state,
+                loading: false,
+                favorites: state.user.favorites.filter((item:any) => item.id !== action.payload.id)
+            }
+        }
         default:
             return state
     }
