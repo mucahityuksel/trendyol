@@ -1,7 +1,9 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
+import { AiFillStar } from 'react-icons/ai';
+import { FaStarHalf } from 'react-icons/fa';
 import { IoMdClose } from 'react-icons/io';
-import { MdOutlineFavoriteBorder } from 'react-icons/md'
+import { VscClose } from 'react-icons/vsc'
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import { User } from '../../Pages/Login/type';
@@ -46,7 +48,7 @@ function FavoriteBody() {
                                     }
                                     <div>
                                         {
-                                            item.mostSales === true ? <div className='product-sale1'>
+                                            item.cargo === false ? <div className='product-sale1'>
                                                 <div className='product-sale-icon1'>
                                                     <div className='sale1'>
                                                         <img alt='' src='https://cdn.dsmcdn.com/mnresize/250/250/marketing/datascience/automation/2020/12/9/EnCokSatan_202012091129.png'></img>
@@ -58,7 +60,7 @@ function FavoriteBody() {
                                 </div>
                                 <div className='delete-icon'>
                                     <div className='icon'>
-                                        <IoMdClose size={"2em"}></IoMdClose>
+                                        <VscClose size={"2em"} className="close-icon"></VscClose>
                                     </div>
 
                                 </div>
@@ -69,8 +71,24 @@ function FavoriteBody() {
                                 <div className="product-name1"><span>{item.brand}</span></div>
                                 <div className="product-name2"><span>{item.name}</span> </div>
                             </div>
-
-
+                            <div className="product-rating1">
+                                <ul className="rating-list">
+                                    <li>{item.star === 0.5 ? <FaStarHalf size="1em" color="#ffca28" /> : <AiFillStar size="1em" color={item.star >= 1 ? "#ffca28" : "gray"} />}</li>
+                                    <li>{item.star === 1.5 ? <FaStarHalf size="1em" color="#ffca28" /> : <AiFillStar size="1em" color={item.star >= 2 ? "#ffca28" : "gray"} />}</li>
+                                    <li>{item.star === 2.5 ? <FaStarHalf size="1em" color="#ffca28" /> : <AiFillStar size="1em" color={item.star >= 3 ? "#ffca28" : "gray"} />}</li>
+                                    <li>{item.star === 3.5 ? <FaStarHalf size="1em" color="#ffca28" /> : <AiFillStar size="1em" color={item.star >= 4 ? "#ffca28" : "gray"} />}</li>
+                                    <li>{item.star === 4.5 ? <FaStarHalf size="1em" color="#ffca28" /> : <AiFillStar size="1em" color={item.star >= 5 ? "#ffca28" : "gray"} />}</li>
+                                    <li className="rating-text">
+                                        <span>({item.question}) </span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div className='product-price'>
+                                <span>{item.price} TL</span>
+                            </div>
+                            <div className='add-basket'>
+                                <button>Sepete Ekle</button>
+                            </div>
                         </div>
                         // return <div>
                         //     <div className="product-card" onClick={() => {
