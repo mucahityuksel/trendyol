@@ -62,7 +62,7 @@ function FeaturedProduct({ title }: any) {
                                                 <div className='product-like'>
                                                     <div className='icon-div'
                                                         onClick={() => {
-                                                            dispatch(addFavorite(item,user))
+                                                            dispatch(addFavorite(item, user))
                                                         }}
                                                     ><MdOutlineFavoriteBorder className='like-icon'></MdOutlineFavoriteBorder></div>
                                                 </div>
@@ -75,13 +75,15 @@ function FeaturedProduct({ title }: any) {
                                                 }
                                             </div>
                                         </div>
-                                        {item.mostSales === true ? <div className='product-sale'>
-                                            <div className='product-sale-icon'>
-                                                <div className='sale'>
-                                                    <img alt='' src='https://cdn.dsmcdn.com/mnresize/250/250/marketing/datascience/automation/2020/12/9/EnCokSatan_202012091129.png'></img>
+                                        {
+                                            item.mostSales === true ? <div className='product-sale'>
+                                                <div className='product-sale-icon'>
+                                                    <div className='sale'>
+                                                        <img alt='' src='https://cdn.dsmcdn.com/mnresize/250/250/marketing/datascience/automation/2020/12/9/EnCokSatan_202012091129.png'></img>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                        </div> : <div></div>}
+                                            </div> : <div></div>
+                                        }
                                         <div className='product-price'>
                                             <span className='price'>{item.price} TL</span>
                                         </div>
