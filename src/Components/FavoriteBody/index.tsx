@@ -73,6 +73,8 @@ function FavoriteBody() {
                                         dispatch(deleteFavorite(item, user))
                                         setLoad(!load)
                                         getDataFromApi()
+                                      
+                                
                                     }}>
                                         <VscClose size={"2em"} className="close-icon"></VscClose>
                                     </div>
