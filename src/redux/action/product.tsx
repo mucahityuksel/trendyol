@@ -11,7 +11,7 @@ export type AppThunk = ActionCreator<ThunkAction<void, ProductsState, null, Acti
 export const fetchRequest: AppThunk = () => {
     return (dispatch: Dispatch) => {
         try {
-            axios.get("http://localhost:3001/products")
+            axios.get("https://trendyol-backend1.herokuapp.com/products")
                 .then((res) => {
                     return dispatch({
                         type: ActionTypes.FETCH_SUCCESS,
@@ -32,7 +32,7 @@ export const fetchRequest: AppThunk = () => {
 export const getSelected: AppThunk = (id: any) => {
     return (dispatch: Dispatch) => {
         try {
-            axios.get("http://localhost:3001/products/" + id)
+            axios.get("https://trendyol-backend1.herokuapp.com/products/" + id)
                 .then((res) => {
                     return dispatch({
                         type: ActionTypes.GET_SELECTED,
@@ -51,7 +51,7 @@ export const getSelected: AppThunk = (id: any) => {
 export const addFavorite: AppThunk = (data: Products, user: User) => {
     return (dispatch: Dispatch) => {
         try {
-            axios.put("http://localhost:3001/favorites", { data, user })
+            axios.put("https://trendyol-backend1.herokuapp.com/favorites", { data, user })
                 .then((res) => {
                     return dispatch({
                         type: ActionTypes.ADD_FAVORITE,
@@ -70,7 +70,7 @@ export const addFavorite: AppThunk = (data: Products, user: User) => {
 export const deleteFavorite: AppThunk = (data: Products, user: any) => {
     return (dispatch: Dispatch) => {
         try {
-            axios.put("http://localhost:3001/data/update/"+user,{data})
+            axios.put("https://trendyol-backend1.herokuapp.com/data/update/"+user,{data})
                 .then((res) => {
                     return dispatch({
                         type: ActionTypes.DELETE_FAVORITE,
@@ -90,7 +90,7 @@ export const deleteFavorite: AppThunk = (data: Products, user: any) => {
 export const saveUser: AppThunk = (user: User) => {
     return (dispatch: Dispatch) => {
         try {
-            axios.post("http://localhost:3001/user", user)
+            axios.post("https://trendyol-backend1.herokuapp.com/user", user)
                 .then((res) => {
                     return dispatch({
                         type: ActionTypes.LOGIN,

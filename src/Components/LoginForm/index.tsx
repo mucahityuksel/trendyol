@@ -71,7 +71,7 @@ function LoginForm() {
     }
 
     const sendUser = (user: User) => {
-        axios.post("http://localhost:3001/user/add", user)
+        axios.post("https://trendyol-backend1.herokuapp.com/user/add", user)
             .then((res) => console.log(res))
             .catch((e) => console.log(e))
     }

@@ -23,7 +23,7 @@ function FavoriteBody() {
     const [x, setX] = useState(0)
 
     const getDataFromApi = () => {
-        axios.get(`http://localhost:3001/favorites?email=${user}`)
+        axios.get(`https://trendyol-backend1.herokuapp.com/favorites?email=${user}`)
             .then((res) => {
                 console.log(res)
                 setData(res.data.favorites)
