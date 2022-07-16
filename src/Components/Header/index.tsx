@@ -19,7 +19,7 @@ function Header() {
     const [active, setActive] = useState<boolean>(false)
     const [active1, setActive1] = useState<boolean>(false)
     const history = useHistory();
-
+    const [showResult, setShowResult] = useState<boolean>(false);
     const [load, setLoad] = useState<boolean>(false);
     const user: any = localStorage.getItem("user")
 
@@ -51,8 +51,35 @@ function Header() {
                 <div className='search-comp'>
                     <div className='header-search-bar'>
                         <div className="header-search">
-                            <input className='search-input' placeholder='Aradığınız ürün, ktegori veya markayı yazınız'></input>
+                            <input className='search-input' placeholder='Aradığınız ürün, ktegori veya markayı yazınız' onClick={()=>setShowResult(!showResult)}></input>
                             <FiSearch className='search-icon'></FiSearch>
+                        </div>
+
+                        <div className={showResult === true ? "search-result-bar-show" : "search-result-bar"}>
+                            <div className="results">
+                                    <div className="popular-result">
+                                        <p className="result-title">Popüler Aramalar</p>
+                                        <div className="result-topics">                                   
+                                            <div className="result-brand">defacto</div>
+                                            <div className="result-brand">elle </div>
+                                            <div className="result-brand">mavi</div>
+                                            <div className="result-brand">coton</div>
+                                            <div className="result-brand">colins</div>
+
+                                        </div>
+                                    </div>
+                                    <div className="for-user-result">
+                                        <p className="result-title">Sana Özel Kategoriler</p>
+                                        <div className="result-topics">                                   
+                                            <div className="result-brand">T-Shirt</div>
+                                            <div className="result-brand">Gözlük </div>
+                                            <div className="result-brand">Şapka</div>
+                                            <div className="result-brand">Şort</div>
+                                            <div className="result-brand">Terlik</div>
+
+                                        </div>
+                                    </div>
+                            </div>
                         </div>
                     </div>
                 </div>

@@ -38,7 +38,7 @@ function FavoriteBody() {
     }, [load])
 
 
-   
+
 
     return (
         <div className='favorite-body-container'>
@@ -73,10 +73,17 @@ function FavoriteBody() {
                                         dispatch(deleteFavorite(item, user))
                                         setLoad(!load)
                                         getDataFromApi()
-                                      
-                                
+
+
                                     }}>
-                                        <VscClose size={"2em"} className="close-icon"></VscClose>
+                                        <VscClose size={"2em"} className="close-icon" onClick={async () => {
+
+
+                                            //setLoad(!load)
+                                            getDataFromApi()
+
+
+                                        }}></VscClose>
                                     </div>
 
                                 </div>
@@ -106,52 +113,9 @@ function FavoriteBody() {
                                 <button>Sepete Ekle</button>
                             </div>
                         </div>
-                        // return <div>
-                        //     <div className="product-card" onClick={() => {
-                        //         dispatch(getSelected(item.id))
-                        //         setX(item.id)
-                        //         history.push(`/product/${item.id}`)
-                        //     }}>
-                        //         <div className='product-image'><img alt='' src={item.image}></img> </div>
-                        //         <div className="product-name"><span>{item.brand}</span></div>
-                        //         <div className="product-name1"><span>{item.name}</span> </div>
-
-
-                        //         <div className='product-details'>
-                        //             <div className='card-header'>
-                        //                 {
-                        //                     item.cargo === true ? <div className='product-cargo'>
-                        //                         <div className='cargo'>
-                        //                             <div className='cargo-text'> KARGO BEDAVA</div>
-                        //                         </div>
-                        //                     </div> : <div></div>
-                        //                 }
-                        //                 <div className='product-like'>
-                        //                     <div className='icon-div'
-                        //                         onClick={() => {
-
-                        //                         }}
-                        //                     ><IoMdClose className='like-icon'></IoMdClose></div>
-                        //                 </div>
-                        //             </div>
-                        //         </div>
-                        //         {
-                        //             item.mostSales === true ? <div className='product-sale'>
-                        //                 <div className='product-sale-icon'>
-                        //                     <div className='sale'>
-                        //                         <img alt='' src='https://cdn.dsmcdn.com/mnresize/250/250/marketing/datascience/automation/2020/12/9/EnCokSatan_202012091129.png'></img>
-                        //                     </div>
-                        //                 </div>
-                        //             </div> : <div></div>
-                        //         }
-                        //         <div className='product-price'>
-                        //             <span className='price'>{item.price} TL</span>
-                        //         </div>
-                        //     </div>
-                        // </div>
                     })
                 }
-                {/*  */}
+
             </div>
         </div>
     )

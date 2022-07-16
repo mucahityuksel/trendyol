@@ -8,7 +8,7 @@ import "./style.scss"
 import { useParams } from "react-router"
 import { useEffect } from "react"
 import { useDispatch, useSelector } from "react-redux"
-import { getSelected } from "../../redux/action/product"
+import { addFavorite, getSelected } from "../../redux/action/product"
 import { Products } from "../FeaturedProduct/type"
 import { Loader } from "rsuite"
 
@@ -17,6 +17,7 @@ function Detail(data: { data: Products[] }) {
 
     const params: any = useParams();
     const dispatch = useDispatch();
+    const user: any = localStorage.getItem("user")
     const data1 = useSelector((state: any) => state.product.selected)
     useEffect(() => {
         console.log(data)
@@ -73,7 +74,9 @@ function Detail(data: { data: Products[] }) {
                                 <div className="buy-button">
                                     <button>Sepete Ekle</button>
                                 </div>
-                                <div className="like-button">
+                                <div className="like-button" onClick={() => {
+                                    dispatch(addFavorite(data.data[0], user))
+                                }}>
                                     <MdOutlineFavoriteBorder className="like-icon" size="1.5em"></MdOutlineFavoriteBorder>
                                 </div>
 
