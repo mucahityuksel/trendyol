@@ -41,9 +41,9 @@
     border: 1px solid #f2e5da;
     padding: 0px 20px;
     cursor: pointer;
-    height: 250px;
+    height: 265px;
     background-color: white;
-
+    justify-content: space-between;
     .product-image {
         display: flex;
 
@@ -96,6 +96,7 @@
                 align-items: center;
                 justify-content: center;
                 cursor: pointer;
+                background: white;
             }
             .like-icon {
                 &:hover {

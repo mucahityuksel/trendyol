@@ -1,6 +1,7 @@
 import React from 'react'
 import Advirtise from '../../Components/Advertise'
 import FeaturedProduct from '../../Components/FeaturedProduct'
+import Footer from '../../Components/Footer'
 import Header from '../../Components/Header'
 import HomeSlider from '../../Components/HomeSlider'
 
@@ -23,6 +24,7 @@ function Home() {
             <Advirtise />
             <Advirtise />
             <Advirtise />
+            <Footer />
         </div>
     )
 }

@@ -32,7 +32,12 @@ function Header() {
         } else {
             setLoad(false)
         }
-    }, [load])
+    }, [load]);
+    const searchInput:HTMLElement|null = document.getElementById("search-input");
+    searchInput?.addEventListener("blur",(event:Event)=>{
+        console.log(event,"event");
+        setShowResult(false)
+    })
     return (
         <div className='header'>
             <div className='wrapper'>
@@ -51,7 +56,7 @@ function Header() {
                 <div className='search-comp'>
                     <div className='header-search-bar'>
                         <div className="header-search">
-                            <input className='search-input' placeholder='Aradığınız ürün, ktegori veya markayı yazınız' onClick={()=>setShowResult(!showResult)}></input>
+                            <input className='search-input' id="search-input" placeholder='Aradığınız ürün, ktegori veya markayı yazınız' onClick={()=>setShowResult(true)}></input>
                             <FiSearch className='search-icon'></FiSearch>
                         </div>
 

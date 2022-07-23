@@ -1,0 +1,55 @@
+@import "../../assets/veriables.scss";
+
+.footer-component{
+    width: 100%;
+    display: flex;
+    margin: 0px auto;
+    padding: 20px;
+    background-color: $zero;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    .footer-container-top{
+        max-width: 1200px;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        .footer-trendyol, 
+        .footer-about, 
+        .footer-campaigns, 
+        .footer-help {
+            .footer-title{
+                font-size: 22px;
+                text-align: start;
+                color: $white;
+                cursor: pointer;
+                &:hover{
+                    text-decoration: underline;
+                }
+            }
+            .footer-list{
+                display: flex;
+                flex-direction: column;
+                list-style: none;
+                list-style-type: none;
+                padding: 0;
+                text-align: start;
+                color: $white;
+                padding: 18px 0px;
+                &:hover{
+                 text-decoration: none;
+                }
+                .footer-list-item{
+                    padding: 12px 0px;
+                    cursor: pointer;
+                    font-size: 13px;
+                    &:hover{
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+        
+       
+    }
+}
