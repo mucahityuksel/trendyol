@@ -1,7 +1,5 @@
 
 
-import { useEffect, useState } from "react";
-import axios from "axios";
 import data from "./brands.json"
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import Slider from "react-slick";
@@ -10,7 +8,6 @@ import "./style.scss"
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-import data1 from "../FeaturedProduct/products.json"
 
 function HomeSlider() {
 

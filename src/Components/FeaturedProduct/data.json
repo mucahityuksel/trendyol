@@ -1,0 +1,290 @@
+[
+    {
+        "Seller": {
+            "score": 3,
+            "followers": 63586
+        },
+        "_id": "6260858f03e9fc21270eef60",
+        "id": 64,
+        "name": "Tempore rem numquam sit.",
+        "price": 1526,
+        "brand": "temporibus",
+        "basketDiscount": true,
+        "image": [
+            "https://loremflickr.com/900/900/product?lock=562",
+            "https://loremflickr.com/900/900/product?lock=891",
+            "https://loremflickr.com/900/900/product?lock=115",
+            "https://loremflickr.com/900/900/product?lock=351"
+        ],
+        "star": 3,
+        "smallImages": [
+            "https://loremflickr.com/900/900/product?lock=23",
+            "https://loremflickr.com/900/900/product?lock=285",
+            "https://loremflickr.com/900/900/product?lock=647",
+            "https://loremflickr.com/900/900/product?lock=731"
+        ],
+        "cargo": false,
+        "productInformation": [
+            "Expedita molestias molestiae et.",
+            "Dignissimos quae et sunt omnis libero totam in.",
+            "Illo cumque esse maxime incidunt veritatis tempora natus officiis eum.",
+            "Repellendus in saepe.",
+            "Expedita voluptatem magni debitis fugiat et."
+        ],
+        "mostSales": false,
+        "category": 99658,
+        "rating": 16482,
+        "comment": 65751,
+        "question": 63083,
+        "like": 16413,
+        "productQuestion": 41700,
+        "__v": 0
+    },
+    {
+        "Seller": {
+            "score": 6,
+            "followers": 7125
+        },
+        "_id": "6260858f03e9fc21270eef61",
+        "id": 65,
+        "name": "Velit totam nisi illo ut ut sunt.",
+        "price": 4859,
+        "brand": "autem",
+        "basketDiscount": true,
+        "image": [
+            "https://loremflickr.com/900/900/product?lock=485",
+            "https://loremflickr.com/900/900/product?lock=242",
+            "https://loremflickr.com/900/900/product?lock=263",
+            "https://loremflickr.com/900/900/product?lock=430"
+        ],
+        "star": 4,
+        "smallImages": [
+            "https://loremflickr.com/900/900/product?lock=933",
+            "https://loremflickr.com/900/900/product?lock=586",
+            "https://loremflickr.com/900/900/product?lock=193",
+            "https://loremflickr.com/900/900/product?lock=973"
+        ],
+        "cargo": false,
+        "productInformation": [
+            "Rerum sit perspiciatis enim ut unde.",
+            "Praesentium quos in blanditiis esse nihil unde rerum asperiores voluptatem.",
+            "Ipsam non molestiae dolores quas ea rem.",
+            "Ipsam id aliquid.",
+            "Sunt excepturi qui aliquid maxime quam."
+        ],
+        "mostSales": true,
+        "category": 64185,
+        "rating": 9023,
+        "comment": 89822,
+        "question": 35237,
+        "like": 1932,
+        "productQuestion": 8493,
+        "__v": 0
+    },
+    {
+        "Seller": {
+            "score": 1,
+            "followers": 51525
+        },
+        "_id": "6260858f03e9fc21270eef62",
+        "id": 66,
+        "name": "Tenetur ut id quos reprehenderit atque nostrum ullam aut.",
+        "price": 4737,
+        "brand": "qui",
+        "basketDiscount": false,
+        "image": [
+            "https://loremflickr.com/900/900/product?lock=991",
+            "https://loremflickr.com/900/900/product?lock=690",
+            "https://loremflickr.com/900/900/product?lock=791",
+            "https://loremflickr.com/900/900/product?lock=744"
+        ],
+        "star": 4,
+        "smallImages": [
+            "https://loremflickr.com/900/900/product?lock=445",
+            "https://loremflickr.com/900/900/product?lock=544",
+            "https://loremflickr.com/900/900/product?lock=878",
+            "https://loremflickr.com/900/900/product?lock=918"
+        ],
+        "cargo": true,
+        "productInformation": [
+            "Perspiciatis voluptate minima blanditiis.",
+            "Rerum deleniti laudantium vero excepturi aut et provident.",
+            "Ipsum et maiores earum exercitationem.",
+            "Doloribus officiis ex ad.",
+            "Odio deleniti culpa odit quaerat distinctio voluptas et."
+        ],
+        "mostSales": true,
+        "category": 87606,
+        "rating": 25835,
+        "comment": 18218,
+        "question": 10731,
+        "like": 268,
+        "productQuestion": 77124,
+        "__v": 0
+    },
+    {
+        "Seller": {
+            "score": 2,
+            "followers": 99681
+        },
+        "_id": "6260858f03e9fc21270eef63",
+        "id": 67,
+        "name": "Ut et dolores at omnis odio odio ullam est eius.",
+        "price": 7038,
+        "brand": "autem",
+        "basketDiscount": false,
+        "image": [
+            "https://loremflickr.com/900/900/product?lock=283",
+            "https://loremflickr.com/900/900/product?lock=490",
+            "https://loremflickr.com/900/900/product?lock=471",
+            "https://loremflickr.com/900/900/product?lock=643"
+        ],
+        "star": 1,
+        "smallImages": [
+            "https://loremflickr.com/900/900/product?lock=442",
+            "https://loremflickr.com/900/900/product?lock=388",
+            "https://loremflickr.com/900/900/product?lock=771",
+            "https://loremflickr.com/900/900/product?lock=853"
+        ],
+        "cargo": true,
+        "productInformation": [
+            "Reprehenderit tempore eaque consequatur eum vero minima quos aut.",
+            "Aliquam nulla voluptates debitis commodi.",
+            "Cum cum accusantium.",
+            "Mollitia non qui suscipit velit aspernatur magni id aut.",
+            "Est quo maiores expedita incidunt architecto eius ipsam enim."
+        ],
+        "mostSales": false,
+        "category": 64061,
+        "rating": 29815,
+        "comment": 83451,
+        "question": 8164,
+        "like": 79479,
+        "productQuestion": 2528,
+        "__v": 0
+    },
+    {
+        "Seller": {
+            "score": 4,
+            "followers": 87898
+        },
+        "_id": "6260858f03e9fc21270eef64",
+        "id": 68,
+        "name": "Tempora in sapiente amet reprehenderit eveniet.",
+        "price": 4008,
+        "brand": "nulla",
+        "basketDiscount": true,
+        "image": [
+            "https://loremflickr.com/900/900/product?lock=397",
+            "https://loremflickr.com/900/900/product?lock=766",
+            "https://loremflickr.com/900/900/product?lock=313",
+            "https://loremflickr.com/900/900/product?lock=469"
+        ],
+        "star": 2,
+        "smallImages": [
+            "https://loremflickr.com/900/900/product?lock=450",
+            "https://loremflickr.com/900/900/product?lock=664",
+            "https://loremflickr.com/900/900/product?lock=169",
+            "https://loremflickr.com/900/900/product?lock=87"
+        ],
+        "cargo": true,
+        "productInformation": [
+            "Occaecati aut optio.",
+            "Non et ut eius.",
+            "Autem neque non sint est sit sint.",
+            "Nulla in nostrum ea dolorum velit quasi.",
+            "Exercitationem recusandae assumenda quia."
+        ],
+        "mostSales": false,
+        "category": 12787,
+        "rating": 33931,
+        "comment": 91215,
+        "question": 14457,
+        "like": 36626,
+        "productQuestion": 3189,
+        "__v": 0
+    },
+
+    {
+        "Seller": {
+            "score": 9,
+            "followers": 60241
+        },
+        "_id": "6260858f03e9fc21270eef67",
+        "id": 71,
+        "name": "Ducimus sed perferendis ut architecto ut molestias modi.",
+        "price": 731,
+        "brand": "omnis",
+        "basketDiscount": false,
+        "image": [
+            "https://loremflickr.com/900/900/product?lock=85",
+            "https://loremflickr.com/900/900/product?lock=907",
+            "https://loremflickr.com/900/900/product?lock=186",
+            "https://loremflickr.com/900/900/product?lock=395"
+        ],
+        "star": 4,
+        "smallImages": [
+            "https://loremflickr.com/900/900/product?lock=109",
+            "https://loremflickr.com/900/900/product?lock=966",
+            "https://loremflickr.com/900/900/product?lock=323",
+            "https://loremflickr.com/900/900/product?lock=585"
+        ],
+        "cargo": false,
+        "productInformation": [
+            "Modi consequatur odit rem assumenda distinctio consequatur.",
+            "Nisi ratione aspernatur quia tempora vel voluptates aut.",
+            "Harum aliquam omnis omnis.",
+            "Aut quisquam consequatur.",
+            "Aut nam mollitia cupiditate magnam earum eius a."
+        ],
+        "mostSales": true,
+        "category": 55408,
+        "rating": 63237,
+        "comment": 89874,
+        "question": 65889,
+        "like": 46686,
+        "productQuestion": 11133,
+        "__v": 0
+    },
+    {
+        "Seller": {
+            "score": 5,
+            "followers": 59727
+        },
+        "_id": "6260858f03e9fc21270eef68",
+        "id": 72,
+        "name": "Et aut fuga totam.",
+        "price": 1612,
+        "brand": "eum",
+        "basketDiscount": false,
+        "image": [
+            "https://loremflickr.com/900/900/product?lock=362",
+            "https://loremflickr.com/900/900/product?lock=92",
+            "https://loremflickr.com/900/900/product?lock=103",
+            "https://loremflickr.com/900/900/product?lock=174"
+        ],
+        "star": 3,
+        "smallImages": [
+            "https://loremflickr.com/900/900/product?lock=114",
+            "https://loremflickr.com/900/900/product?lock=212",
+            "https://loremflickr.com/900/900/product?lock=742",
+            "https://loremflickr.com/900/900/product?lock=310"
+        ],
+        "cargo": false,
+        "productInformation": [
+            "Voluptates aperiam rerum mollitia ipsum amet aut eaque odit animi.",
+            "Sed hic dolorum labore eum nulla modi.",
+            "Perferendis quasi et id sint facilis veniam neque dolor.",
+            "Qui fugiat reiciendis laboriosam.",
+            "Distinctio vel pariatur velit."
+        ],
+        "mostSales": true,
+        "category": 63290,
+        "rating": 42297,
+        "comment": 46797,
+        "question": 37267,
+        "like": 44192,
+        "productQuestion": 48820,
+        "__v": 0
+    }
+]

@@ -1,6 +1,7 @@
 import React from 'react'
 import FavoriteBody from '../../Components/FavoriteBody'
 import FavoritesHeader from '../../Components/FavoritesHeader'
+import Footer from '../../Components/Footer'
 import Header from '../../Components/Header'
 
 function FavoritePage() {
@@ -12,6 +13,7 @@ function FavoritePage() {
             <Header></Header>
             <FavoritesHeader></FavoritesHeader>
             <FavoriteBody></FavoriteBody>
+            <Footer></Footer>
         </div>
     )
 }

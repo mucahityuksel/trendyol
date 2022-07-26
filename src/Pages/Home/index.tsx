@@ -10,7 +10,8 @@ function Home() {
     return (
         <div style={{
             display: "flex",
-            flexDirection: "column"
+            flexDirection: "column",
+            
         }}>
             <Header />
             <HomeSlider />

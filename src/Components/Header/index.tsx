@@ -1,7 +1,7 @@
 
 import "./style.scss"
 import { FiMail, FiSearch } from "react-icons/fi"
-import { MdOutlineFavorite ,MdLiveHelp} from "react-icons/md"
+import { MdOutlineFavorite, MdLiveHelp } from "react-icons/md"
 import { FaBox, FaShoppingCart, FaUser } from "react-icons/fa"
 import { RiUser3Fill, RiLogoutBoxRLine, RiMessage2Line } from "react-icons/ri"
 import { useEffect, useState } from "react"
@@ -11,6 +11,7 @@ import { useHistory } from "react-router-dom"
 import { BsWallet2 } from "react-icons/bs"
 import { HiOutlineTicket } from "react-icons/hi"
 import { GiCutDiamond } from "react-icons/gi"
+import product from "../FeaturedProduct/data.json";
 
 
 
@@ -22,22 +23,25 @@ function Header() {
     const [showResult, setShowResult] = useState<boolean>(false);
     const [load, setLoad] = useState<boolean>(false);
     const user: any = localStorage.getItem("user")
+    const [word, setWord] = useState<String>("");
 
     useEffect(() => {
 
-        console.log(user)
-        if (user !== "") {
+        console.log(user, "user")
+        if (user !== "none") {
             setLoad(true)
-            console.log(user)
         } else {
             setLoad(false)
         }
     }, [load]);
-    const searchInput:HTMLElement|null = document.getElementById("search-input");
-    searchInput?.addEventListener("blur",(event:Event)=>{
-        console.log(event,"event");
+
+    const searchInput: HTMLElement | null = document.getElementById("search-input");
+    window?.addEventListener("blur", (event: Event) => {
         setShowResult(false)
     })
+
+
+
     return (
         <div className='header'>
             <div className='wrapper'>
@@ -56,34 +60,59 @@ function Header() {
                 <div className='search-comp'>
                     <div className='header-search-bar'>
                         <div className="header-search">
-                            <input className='search-input' id="search-input" placeholder='Aradığınız ürün, ktegori veya markayı yazınız' onClick={()=>setShowResult(true)}></input>
+                            <input
+                                className='search-input'
+                                id="search-input"
+                                placeholder='Aradığınız ürün, ktegori veya markayı yazınız'
+                                onClick={() => setShowResult(true)}
+                                onChange={(e: any) => setWord(e.target.value)}
+                            >
+
+                            </input>
                             <FiSearch className='search-icon'></FiSearch>
                         </div>
 
                         <div className={showResult === true ? "search-result-bar-show" : "search-result-bar"}>
                             <div className="results">
-                                    <div className="popular-result">
-                                        <p className="result-title">Popüler Aramalar</p>
-                                        <div className="result-topics">                                   
-                                            <div className="result-brand">defacto</div>
-                                            <div className="result-brand">elle </div>
-                                            <div className="result-brand">mavi</div>
-                                            <div className="result-brand">coton</div>
-                                            <div className="result-brand">colins</div>
+                                <div className="popular-result">
+                                    <p className={word === "" || word === " " ? "result-title" : "result-title-hide"}>{
+                                        word === "" || word === " " ? "Popüler Aramalar" : "İlgili Sonuçlar"
+                                    }</p>
+                                    <div className={word === "" || word === " " ? "result-topics" : "result-topics-hide"}>
+                                        {product.filter((val: any) => {
+                                            if (word === "") {
+                                                return false;
+                                            }
+                                            else if (val.name.toLowerCase().includes(word.toLowerCase())) {
+                                                return val;
+                                            }
+                                        }).map((val, key) => {
+                                            if (key < 5) {
 
-                                        </div>
-                                    </div>
-                                    <div className="for-user-result">
-                                        <p className="result-title">Sana Özel Kategoriler</p>
-                                        <div className="result-topics">                                   
-                                            <div className="result-brand">T-Shirt</div>
-                                            <div className="result-brand">Gözlük </div>
-                                            <div className="result-brand">Şapka</div>
-                                            <div className="result-brand">Şort</div>
-                                            <div className="result-brand">Terlik</div>
+                                            }
+                                            return <div className="product-result">
+                                                <a href={`/product/${val.id}`}>{val.name}</a>
+                                            </div>
+                                        })}
+                                        <div className="result-brand">defacto</div>
+                                        <div className="result-brand">elle </div>
+                                        <div className="result-brand">mavi</div>
+                                        <div className="result-brand">coton</div>
+                                        <div className="result-brand">colins</div>
 
-                                        </div>
                                     </div>
+                                </div>
+                                <div className="for-user-result">
+                                    <p className="result-title">Sana Özel Kategoriler</p>
+                                    <div className="result-topics">
+                                        <div className="result-brand">T-Shirt</div>
+                                        <div className="result-brand">Gözlük </div>
+                                        <div className="result-brand">Şapka</div>
+                                        <div className="result-brand">Şort</div>
+                                        <div className="result-brand">Terlik</div>
+
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -136,8 +165,8 @@ function Header() {
                                             <span>Trendyol Asistan</span>
                                         </div>
                                         <div className="login-button1" onClick={() => {
-                                        
-                                            localStorage.setItem("user", "")
+
+                                            localStorage.setItem("user", "none")
                                             history.push("/login")
                                         }}>
                                             <RiLogoutBoxRLine></RiLogoutBoxRLine>
@@ -149,7 +178,7 @@ function Header() {
                         </div>
                         <div className='header-link-items'>
 
-                            <div className='header-link-item' onClick={()=> {
+                            <div className='header-link-item' onClick={() => {
                                 history.push("/favorilerim")
                             }}>
                                 <MdOutlineFavorite className='header-list-icon' size={"2.5em"}></MdOutlineFavorite>

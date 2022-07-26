@@ -1,4 +1,5 @@
 import React from 'react'
+import Footer from '../../Components/Footer'
 import Header from '../../Components/Header'
 import LoginForm from '../../Components/LoginForm'
 import "./style.scss"
@@ -11,6 +12,7 @@ function LoginPage() {
         }}>
             <Header />
             <LoginForm />
+            <Footer/>
         </div>
     )
 }
