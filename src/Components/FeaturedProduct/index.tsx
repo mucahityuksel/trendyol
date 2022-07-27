@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { Key, useEffect, useState } from 'react'
 import "./style.scss"
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -44,8 +44,8 @@ function FeaturedProduct({ title }: any) {
                         ]}
                     >
                         {
-                            store.product?.map((item: any) => {
-                                return <div>
+                            store.product?.map((item: any,key:Key) => {
+                                return <div key={key}>
                                     <div className="product-card" onClick={() => {
                                         dispatch(getSelected(item.id))
                                         setX(item.id)

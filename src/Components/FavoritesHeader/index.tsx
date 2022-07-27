@@ -14,11 +14,7 @@ function FavoritesHeader() {
                         <MdOutlineFavorite size={"1.5em"} color="#f27a1a"></MdOutlineFavorite>
                         <span>Favorilerim</span>
                     </div>
-                    <div className='favorite-bookmark'>
-                        <BsFillBookmarkFill size={"1.5em"} ></BsFillBookmarkFill>
-                        <span>Koleksiyonlarım</span>
-                        <div>YENİ</div>
-                    </div>
+                    
                 </div>
                 <div className='favorite-header-right'>
                     <div className='search-comp'>

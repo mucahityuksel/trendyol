@@ -6,7 +6,7 @@ import { SiHomeassistantcommunitystore } from "react-icons/si"
 import { IoMdText } from "react-icons/io"
 import "./style.scss"
 import { useParams } from "react-router"
-import { useEffect } from "react"
+import { Key, useEffect } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { addFavorite, getSelected } from "../../redux/action/product"
 import { Products } from "../FeaturedProduct/type"
@@ -98,8 +98,8 @@ function Detail(data: { data: Products[] }) {
                                 </div>
                                 <ul className="information-list">
                                     {
-                                        data.data[0].productInformation.map((item: any) => {
-                                            return <li>{item}</li>
+                                        data.data[0].productInformation.map((item: any,key: Key) => {
+                                            return <li key={key}>{item}</li>
                                         })
                                     }
                                 </ul>

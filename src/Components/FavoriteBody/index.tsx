@@ -1,5 +1,5 @@
 import axios from 'axios';
-import React, { useEffect, useState } from 'react'
+import React, { Key, useEffect, useState } from 'react'
 import { AiFillStar } from 'react-icons/ai';
 import { FaStarHalf } from 'react-icons/fa';
 import { IoMdClose } from 'react-icons/io';
@@ -9,6 +9,7 @@ import { useHistory } from 'react-router-dom';
 import { User } from '../../Pages/Login/type';
 import { deleteFavorite, getSelected } from '../../redux/action/product';
 import { Products } from '../FeaturedProduct/type';
+import BlankFavorites from './blank';
 import "./style.scss"
 
 
@@ -31,10 +32,9 @@ function FavoriteBody() {
             })
             .catch((err) => console.log(err))
     }
+
     useEffect(() => {
-
         getDataFromApi()
-
     }, [load])
 
 
@@ -44,8 +44,9 @@ function FavoriteBody() {
         <div className='favorite-body-container'>
             <div className='favorite-body-bar'>
                 {
-                    data?.map((item: any) => {
-                        return <div className='product-card1'>
+                    data?.length > 0 ?
+                    data?.map((item: any,key:Key) => {
+                        return <div className='product-card1' key={key}>
                             <div className='product-header'>
                                 <div className='product-features-bar'>
                                     {
@@ -113,7 +114,7 @@ function FavoriteBody() {
                                 <button>Sepete Ekle</button>
                             </div>
                         </div>
-                    })
+                    }): <BlankFavorites/>
                 }
 
             </div>

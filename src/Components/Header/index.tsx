@@ -27,8 +27,8 @@ function Header() {
 
     useEffect(() => {
 
-        console.log(user, "user")
-        if (user !== "none") {
+     
+        if (localStorage.length !== 0) {
             setLoad(true)
         } else {
             setLoad(false)

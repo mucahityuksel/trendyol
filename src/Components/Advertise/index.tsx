@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Key } from 'react'
 import data from "./advertise.json"
 import { FiArrowRight } from "react-icons/fi"
 import "./style.scss"
@@ -8,8 +8,8 @@ function Advirtise() {
         <div className='advertise-container'>
             <div className='advertise'>
                 {
-                    data.map((item: any) => {
-                        return <div className='advertise-card'>
+                    data.map((item: any,key:Key) => {
+                        return <div className='advertise-card' key={key}> 
                             <div className='advertise-img'>
                                 <img src={item.image} ></img>
                             </div>

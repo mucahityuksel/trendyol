@@ -7,6 +7,7 @@ import '@brainhubeu/react-carousel/lib/style.css';
 import "./style.scss"
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { Key } from "react";
 
 
 function HomeSlider() {
@@ -50,8 +51,8 @@ function HomeSlider() {
             {...settings}
         >
             {
-                data.brands.map((item: any) => {
-                    return <div className="brand">
+                data.brands.map((item: any,key: Key) => {
+                    return <div className="brand" key={key}>
                         <img src={item.image} ></img>
                         <div className="brand-name">{item.name} </div>
 

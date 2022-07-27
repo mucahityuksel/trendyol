@@ -1,0 +1,59 @@
+@import "../../../assets/veriables.scss";
+
+.blank-favorites-component {
+    width: 100%;
+    height: 100%;
+    margin: 20px 0px auto;
+    border: 1px solid #e6e6e6;
+    padding: 60px 0px;
+
+    .blank-favorites-container{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 80px 0px;
+        .blank-icon{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 72px;
+            height: 72px;
+            border-radius: 50%;
+            background-color: #fff0e4;
+            .blank-like-icon{
+                color: $main-color;
+                font-size: 28px;
+                margin: 0px auto;
+                
+            }
+        }
+        .blank-info{
+            text-align: center;
+            font-size: 18px;
+            color: $main-color;
+            margin-top: 8px;
+        }
+        .blank-desc{
+            font-size: 14px;
+            margin-top: 5px;
+        }
+        .blank-start-shop{
+            width: 243px;
+            height: 50px;
+            margin: 30px auto 0;
+            
+            button{
+                width: 100%;
+                height: 100%;
+                background-color: $main-color;
+                border-radius: 5px;
+                color: $white;
+                transition: all ease 0.5s;
+                &:hover{
+                    opacity: 0.9;
+                }
+            }
+        }
+    }
+}
