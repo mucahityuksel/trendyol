@@ -32,14 +32,20 @@
         }
     }
 }
-
+.carousel{
+    ul{
+        li{
+            padding: 0px 28px;
+        }
+    }
+}
 .product-card {
     width: 240px;
     margin-top: 25px;
     display: flex;
     flex-direction: column;
     border: 1px solid #f2e5da;
-    padding: 0px 20px;
+    padding: 0px 40px;
     cursor: pointer;
     height: 265px;
     background-color: white;
@@ -85,7 +91,7 @@
         .product-like {
             display: flex;
             justify-content: center;
-            margin-left: 75px;
+            margin-left: 50px;
             padding: 10px 0px;
             .icon-div {
                 width: 25px;

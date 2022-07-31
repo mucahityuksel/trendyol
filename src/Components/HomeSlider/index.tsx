@@ -51,7 +51,7 @@ function HomeSlider() {
             {...settings}
         >
             {
-                data.brands.map((item: any,key: Key) => {
+                data.brands.map((item: any, key: Key) => {
                     return <div className="brand" key={key}>
                         <img src={item.image} ></img>
                         <div className="brand-name">{item.name} </div>

@@ -166,7 +166,7 @@ function Header() {
                                         </div>
                                         <div className="login-button1" onClick={() => {
 
-                                            localStorage.setItem("user", "none")
+                                            localStorage.setItem("user", "")
                                             history.push("/login")
                                         }}>
                                             <RiLogoutBoxRLine></RiLogoutBoxRLine>

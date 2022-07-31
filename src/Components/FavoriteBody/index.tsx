@@ -1,14 +1,11 @@
 import axios from 'axios';
-import React, { Key, useEffect, useState } from 'react'
+import { Key, useEffect, useState } from 'react'
 import { AiFillStar } from 'react-icons/ai';
 import { FaStarHalf } from 'react-icons/fa';
-import { IoMdClose } from 'react-icons/io';
 import { VscClose } from 'react-icons/vsc'
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
-import { User } from '../../Pages/Login/type';
-import { deleteFavorite, getSelected } from '../../redux/action/product';
-import { Products } from '../FeaturedProduct/type';
+import { deleteFavorite } from '../../redux/action/product';
 import BlankFavorites from './blank';
 import "./style.scss"
 

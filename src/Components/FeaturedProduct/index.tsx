@@ -1,10 +1,8 @@
 import { Key, useEffect, useState } from 'react'
 import "./style.scss"
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-import '@brainhubeu/react-carousel/lib/style.css';
+import Carousel from "react-multi-carousel";
+import "react-multi-carousel/lib/styles.css";
 import { MdOutlineFavoriteBorder } from "react-icons/md"
-import Carousel, { slidesToShowPlugin } from '@brainhubeu/react-carousel';
 import { useDispatch, useSelector } from 'react-redux';
 import { addFavorite, fetchRequest, getSelected } from '../../redux/action/product';
 import { useHistory } from 'react-router-dom';
@@ -22,7 +20,25 @@ function FeaturedProduct({ title }: any) {
     useEffect(() => {
         dispatch(fetchRequest())
     }, [])
-
+    const responsive = {
+        superLargeDesktop: {
+            // the naming can be any, depends on you.
+            breakpoint: { max: 4000, min: 3000 },
+            items: 5
+        },
+        desktop: {
+            breakpoint: { max: 3000, min: 1024 },
+            items: 4
+        },
+        tablet: {
+            breakpoint: { max: 1024, min: 464 },
+            items: 2
+        },
+        mobile: {
+            breakpoint: { max: 464, min: 0 },
+            items: 1
+        }
+    };
     return (
         <div className='featured-container'>
             <div className='featured-bar'>
@@ -31,20 +47,10 @@ function FeaturedProduct({ title }: any) {
                 <div className='slider-bar'>
                     <Carousel
                         className='carousel'
-                        plugins={[
-                            'infinite',
-                            'arrows',
-                            {
-                                resolve: slidesToShowPlugin,
-                                options: {
-                                    numberOfSlides: 4
-
-                                }
-                            },
-                        ]}
+                        responsive={responsive}
                     >
                         {
-                            store.product?.map((item: any,key:Key) => {
+                            store.product?.map((item: any, key: Key) => {
                                 return <div key={key}>
                                     <div className="product-card" onClick={() => {
                                         dispatch(getSelected(item.id))
