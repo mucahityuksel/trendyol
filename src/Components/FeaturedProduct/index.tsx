@@ -64,13 +64,7 @@ function FeaturedProduct({ title }: any) {
 
                                         <div className='product-details'>
                                             <div>
-                                                <div className='product-like'>
-                                                    <div className='icon-div'
-                                                        onClick={() => {
-                                                            dispatch(addFavorite(item, user))
-                                                        }}
-                                                    ><MdOutlineFavoriteBorder className='like-icon'></MdOutlineFavoriteBorder></div>
-                                                </div>
+                                               
                                                 {
                                                     item.cargo === true ? <div className='product-cargo'>
                                                         <div className='cargo'>
