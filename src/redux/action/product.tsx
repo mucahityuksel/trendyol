@@ -4,7 +4,7 @@ import { ThunkAction } from "redux-thunk";
 import { Products } from "../../Components/FeaturedProduct/type";
 import { User } from "../../Pages/Login/type";
 import { ActionTypes, ProductsState } from "./type";
-
+import fakeData from "../../Components/FeaturedProduct/data.json"
 
 export type AppThunk = ActionCreator<ThunkAction<void, ProductsState, null, Action<string>>>;
 
@@ -29,17 +29,17 @@ export const fetchRequest: AppThunk = () => {
     }
 }
 
-export const getSelected: AppThunk = (id: any) => {
+export const getSelected: AppThunk = (id: Number) => {
     return (dispatch: Dispatch) => {
         try {
-            axios.get("https://trendyol-backend1.herokuapp.com/products/" + id)
-                .then((res) => {
+            fakeData.map((item : any,key : Number) =>{
+                if(item.id === id){
                     return dispatch({
-                        type: ActionTypes.GET_SELECTED,
-                        payload: res.data
+                        type : ActionTypes.GET_SELECTED,
+                        payload : item
                     })
-                })
-                .catch((e) => console.log(e))
+                }
+            })
         } catch (error) {
             return dispatch({
                 type: ActionTypes.FETCH_ERROR

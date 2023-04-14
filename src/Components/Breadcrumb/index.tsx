@@ -1,10 +1,14 @@
 import { Breadcrumb } from "rsuite"
-import {AiOutlineRight} from "react-icons/ai"
+import { AiOutlineRight } from "react-icons/ai"
+import { useEffect } from "react"
 import "./style.scss"
+import { Products } from "../FeaturedProduct/type"
 
 
-function BreadCrumbs(data : {data: any[]}) {
-
+const BreadCrumbs = (data: { data: any }) => {
+    useEffect(()=>{
+        console.log(data)
+    },[])
     return (
         <div className="breadcrumb">
             <Breadcrumb className="breadcrumb-item" separator={<AiOutlineRight></AiOutlineRight>}>
@@ -12,9 +16,9 @@ function BreadCrumbs(data : {data: any[]}) {
                     Ana Sayfa
                 </Breadcrumb.Item>
                 <Breadcrumb.Item className="bread-home">
-                    {data.data[0]?.category}
+                    {data.data?.category}
                 </Breadcrumb.Item>
-                <Breadcrumb.Item className="bread-home">{data.data[0]?.name}</Breadcrumb.Item>
+                <Breadcrumb.Item className="bread-home">{data?.data?.name}</Breadcrumb.Item>
             </Breadcrumb>
 
         </div>

@@ -26,8 +26,6 @@ function Header() {
     const [word, setWord] = useState<String>("");
 
     useEffect(() => {
-
-     
         if (localStorage.length !== 0) {
             setLoad(true)
         } else {
@@ -36,11 +34,9 @@ function Header() {
     }, [load]);
 
     const searchInput: HTMLElement | null = document.getElementById("search-input");
-    window?.addEventListener("blur", (event: Event) => {
+    searchInput?.addEventListener("blur", (event: Event) => {
         setShowResult(false)
     })
-
-
 
     return (
         <div className='header'>
@@ -207,7 +203,7 @@ function Header() {
                                                 {
                                                     <div>
                                                         <div className="category-name">{data.name}</div>
-                                                        {data.subCategories !== [] ? data.subCategories.map((item: any) => {
+                                                        {data?.subCategories !== [] ? data.subCategories.map((item: any) => {
                                                             return <div className="sub-categories">{item.name} </div>
                                                         }) : <div></div>}
                                                     </div>

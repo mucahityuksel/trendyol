@@ -6,7 +6,7 @@ import { MdOutlineFavoriteBorder } from "react-icons/md"
 import { useDispatch, useSelector } from 'react-redux';
 import { addFavorite, fetchRequest, getSelected } from '../../redux/action/product';
 import { useHistory } from 'react-router-dom';
-
+import fakeData from "./mockProducts.json";
 
 
 function FeaturedProduct({ title }: any) {
@@ -18,7 +18,8 @@ function FeaturedProduct({ title }: any) {
     const user = localStorage.getItem("user")
 
     useEffect(() => {
-        dispatch(fetchRequest())
+        //dispatch(fetchRequest())
+        console.log(fakeData)
     }, [])
     const responsive = {
         superLargeDesktop: {
@@ -50,7 +51,7 @@ function FeaturedProduct({ title }: any) {
                         responsive={responsive}
                     >
                         {
-                            store.product?.map((item: any, key: Key) => {
+                            fakeData?.map((item: any, key: Key) => {
                                 return <div key={key}>
                                     <div className="product-card" onClick={() => {
                                         dispatch(getSelected(item.id))
